@@ -1,8 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:skin_ML/BottomNavigationBar.dart';
 import 'package:skin_ML/disease_predict_model.dart';
 import 'package:skin_ML/chatbot.dart';
+import 'package:skin_ML/drawer.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -10,7 +12,7 @@ void main() {
     routes: {
       '/MyApp': (context) => MyApp(),
       '/ML_Model': (context) => ML_Model(),
-      '/MyApp2': (context) => MyApp2(),
+      '/MyBot': (context) => MyBot(),
       // '/dashboard': (context) => DashboardScreen(),
     },
   ));
@@ -41,64 +43,10 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _selectedIndex = 0;
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-    if (_selectedIndex == 1) {
-      Navigator.of(context).push(
-        CupertinoPageRoute(
-          fullscreenDialog: true,
-          builder: (context) => ML_Model(),
-        ),
-      );
-    }
-    if (_selectedIndex == 2) {
-      Navigator.of(context).push(
-        CupertinoPageRoute(
-          fullscreenDialog: true,
-          builder: (context) => MyApp2(),
-        ),
-      );
-    }
-    _selectedIndex = 0;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: ListView(
-          children: <Widget>[
-            ListTile(
-              title: Text('My Account'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Logout'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Detect Disease'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('News'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Solve Doubts'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: Text('Talk to Expert'),
-              onTap: () {},
-            )
-          ],
-        ),
-      ),
+      drawer: MyDrawer(),
       appBar: AppBar(
           title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -283,25 +231,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Detect',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.chat),
-            label: 'Chat',
-          )
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-      ),
+      bottomNavigationBar: MyNavBar(),
     );
   }
 }

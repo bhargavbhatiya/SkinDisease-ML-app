@@ -2,18 +2,18 @@ import 'package:bubble/bubble.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dialogflow/dialogflow_v2.dart';
 
-class MyApp2 extends StatefulWidget {
+class MyBot extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _MyBotState createState() => _MyBotState();
 }
 
-class _MyAppState extends State<MyApp2> {
+class _MyBotState extends State<MyBot> {
   void response(query) async {
     AuthGoogle authGoogle = await AuthGoogle(
-        fileJson: "assets/cupcakesbot-qlrcih-9c82160e9e70.json")
+            fileJson: "assets/cupcakesbot-qlrcih-9c82160e9e70.json")
         .build();
     Dialogflow dialogflow =
-    Dialogflow(authGoogle: authGoogle, language: Language.english);
+        Dialogflow(authGoogle: authGoogle, language: Language.english);
     AIResponse aiResponse = await dialogflow.detectIntent(query);
     setState(() {
       messsages.insert(0, {
@@ -56,18 +56,16 @@ class _MyAppState extends State<MyApp2> {
                 children: <Widget>[
                   Flexible(
                       child: TextField(
-                        controller: messageInsert,
-                        decoration: InputDecoration.collapsed(
-                            hintText: "Send your message",
-                            hintStyle: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 18.0)),
-                      )),
+                    controller: messageInsert,
+                    decoration: InputDecoration.collapsed(
+                        hintText: "Send your message",
+                        hintStyle: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18.0)),
+                  )),
                   Container(
                     margin: EdgeInsets.symmetric(horizontal: 4.0),
                     child: IconButton(
-
                         icon: Icon(
-
                           Icons.send,
                           size: 30.0,
                           color: Colors.purple[400],
@@ -122,10 +120,10 @@ class _MyAppState extends State<MyApp2> {
                 ),
                 Flexible(
                     child: Text(
-                      message,
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
-                    ))
+                  message,
+                  style: TextStyle(
+                      color: Colors.white, fontWeight: FontWeight.bold),
+                ))
               ],
             ),
           )),

@@ -195,7 +195,7 @@ class _ML_ModelState extends State<ML_Model> {
                       onPressed: () => Navigator.push(
                           context,
                           new MaterialPageRoute(
-                              builder: (context) => new MyApp2())),
+                              builder: (context) => new MyBot())),
                     )),
               ],
             ),
