@@ -100,7 +100,7 @@ class _MyBotState extends State<MyBot> {
       padding: EdgeInsets.all(10.0),
       child: Bubble(
           radius: Radius.circular(15.0),
-          color: data == 0 ? Colors.pink[100] : Colors.blue[100],
+          color: data == 0 ? Colors.pink[100] : Colors.blue[200],
           elevation: 0.0,
           alignment: data == 0 ? Alignment.topLeft : Alignment.topRight,
           nip: data == 0 ? BubbleNip.leftBottom : BubbleNip.rightTop,
