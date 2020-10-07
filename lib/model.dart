@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
+import 'package:skin_ML/main.dart';
 
 // ignore: camel_case_types
 class ML_Model extends StatefulWidget {
@@ -80,6 +81,7 @@ class _ML_ModelState extends State<ML_Model> {
         elevation: 0,
       ),
       body: Container(
+
         // color: Colors.yellow[50],
         color: Color.fromRGBO(224, 140, 255, 0.2),
         width: MediaQuery.of(context).size.width,
@@ -179,9 +181,27 @@ class _ML_ModelState extends State<ML_Model> {
                   ),
                   backgroundColor: Colors.deepPurpleAccent,
                 ),
+              Container(
+                  height: 470,
+                  width: 360,
+                  alignment: Alignment.bottomRight,
+                  child: FloatingActionButton(
+                  heroTag: '1',
+                  materialTapTargetSize: MaterialTapTargetSize.padded,
+                    child: Center(
+                      child: Icon(Icons.chat, color: Colors.white),
+                    ),
+                    elevation: 4.0,
+                   backgroundColor: Colors.deepPurpleAccent,
+                    onPressed: () => Navigator.push(context, new MaterialPageRoute(builder: (context) => new SecondScreen())),
+                   )
+                   ),
               ],
+
             ),
+
           ),
+
         ),
       ),
     );
