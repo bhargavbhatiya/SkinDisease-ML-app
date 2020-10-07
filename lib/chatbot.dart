@@ -30,10 +30,8 @@ class _MyBotState extends State<MyBot> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(
-          child: Text('Your HealthCare Bot'),
-        ),
-        backgroundColor: Colors.purpleAccent[100],
+        title: Text('Your HealthCare Bot'),
+        backgroundColor: Color.fromRGBO(14, 49, 80, 1),
       ),
       body: Container(
         child: Column(
@@ -68,7 +66,7 @@ class _MyBotState extends State<MyBot> {
                         icon: Icon(
                           Icons.send,
                           size: 30.0,
-                          color: Colors.purple[400],
+                          color: Color.fromRGBO(14, 49, 80, 1),
                         ),
                         onPressed: () {
                           if (messageInsert.text.isEmpty) {
@@ -102,7 +100,7 @@ class _MyBotState extends State<MyBot> {
       padding: EdgeInsets.all(10.0),
       child: Bubble(
           radius: Radius.circular(15.0),
-          color: data == 0 ? Colors.purple[200] : Colors.purple[200],
+          color: data == 0 ? Colors.pink[100] : Colors.blue[100],
           elevation: 0.0,
           alignment: data == 0 ? Alignment.topLeft : Alignment.topRight,
           nip: data == 0 ? BubbleNip.leftBottom : BubbleNip.rightTop,
@@ -122,7 +120,8 @@ class _MyBotState extends State<MyBot> {
                     child: Text(
                   message,
                   style: TextStyle(
-                      color: Colors.white, fontWeight: FontWeight.bold),
+                      color: Color.fromRGBO(14, 49, 80, 1),
+                      fontWeight: FontWeight.bold),
                 ))
               ],
             ),

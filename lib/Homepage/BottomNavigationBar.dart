@@ -36,9 +36,14 @@ class _MyNavBarState extends State<MyNavBar> {
     _selectedIndex = 0;
   }
 
+  // var color2 = Color.fromRGBO(255, 192, 194, 1);
+  // var color1 = Color.fromRGBO(150, 1, 178, 1);
+  // var color4 = Color.fromRGBO(255, 177, 187, 1);
+
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      backgroundColor: Color.fromRGBO(250, 255, 250, 1),
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
@@ -54,7 +59,7 @@ class _MyNavBarState extends State<MyNavBar> {
         )
       ],
       currentIndex: _selectedIndex,
-      selectedItemColor: Colors.amber[800],
+      selectedItemColor: Color.fromRGBO(14, 49, 80, 1),
       onTap: _onItemTapped,
     );
   }

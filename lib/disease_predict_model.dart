@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:skin_ML/chatbot.dart';
 import 'package:tflite/tflite.dart';
 
 // ignore: camel_case_types
@@ -77,7 +76,7 @@ class _ML_ModelState extends State<ML_Model> {
           "Skin Disease predictor",
           style: TextStyle(color: Colors.white, fontSize: 23),
         ),
-        backgroundColor: Color.fromRGBO(79, 0, 107, 1.0),
+        backgroundColor: Color.fromRGBO(14, 49, 80, 1),
         elevation: 0,
       ),
       body: Container(
@@ -103,16 +102,6 @@ class _ML_ModelState extends State<ML_Model> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            // _image == null ? Container() : Image.file(_image),
-                            // _image == null
-                            //     ? Container()
-                            //     : Container(
-                            //         width: MediaQuery.of(context).size.width,
-                            //         height: MediaQuery.of(context).size.height *
-                            //             0.65,
-                            //         child:
-                            //             Image.file(_image, fit: BoxFit.contain),
-                            //       ),
                             _image == null
                                 ? Container()
                                 : Container(
@@ -145,20 +134,22 @@ class _ML_ModelState extends State<ML_Model> {
                                         decoration: BoxDecoration(
                                             // color: Colors.yellow[200],
                                             color: Color.fromRGBO(
-                                                169, 73, 243, 0.4),
+                                                235, 255, 250, 1),
                                             border: Border.all(
-                                              color: Colors.deepPurpleAccent,
-                                              width: 2,
+                                              color:
+                                                  Color.fromRGBO(14, 49, 80, 1),
+                                              width: 1,
                                             ),
                                             borderRadius:
-                                                BorderRadius.circular(25)),
-                                        padding: EdgeInsets.all(5),
+                                                BorderRadius.circular(12)),
+                                        padding: EdgeInsets.all(7),
                                         child: Center(
                                           child: Text(
                                             _outputs[0]["label"],
+                                            textAlign: TextAlign.center,
                                             style: TextStyle(
                                               color: Colors.black,
-                                              fontSize: 22,
+                                              fontSize: 20,
                                             ),
                                           ),
                                         ),
@@ -178,25 +169,8 @@ class _ML_ModelState extends State<ML_Model> {
                     size: 20,
                     color: Colors.white,
                   ),
-                  backgroundColor: Colors.deepPurpleAccent,
+                  backgroundColor: Color.fromRGBO(14, 49, 80, 1),
                 ),
-                Container(
-                    height: 470,
-                    width: 360,
-                    alignment: Alignment.bottomRight,
-                    child: FloatingActionButton(
-                      heroTag: '1',
-                      materialTapTargetSize: MaterialTapTargetSize.padded,
-                      child: Center(
-                        child: Icon(Icons.chat, color: Colors.white),
-                      ),
-                      elevation: 4.0,
-                      backgroundColor: Colors.deepPurpleAccent,
-                      onPressed: () => Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => new MyBot())),
-                    )),
               ],
             ),
           ),
