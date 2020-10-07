@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skin_ML/model.dart';
+import 'package:skin_ML/disease_predict_model.dart';
 
 void main() {
   runApp(MyApp());
