@@ -30,6 +30,7 @@ class _MyBotState extends State<MyBot> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text('Your HealthCare Bot'),
         backgroundColor: Color.fromRGBO(14, 49, 80, 1),
       ),
