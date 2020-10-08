@@ -38,9 +38,11 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       drawer: MyDrawer(),
       appBar: AppBar(
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[],
+        title: Align(
+          //mainAxisAlignment: MainAxisAlignment.center,
+          //children: <Widget>[],
+          child: Text('SkinShine'),
+          alignment: Alignment.centerLeft,
         ),
       ),
       body: SingleChildScrollView(
