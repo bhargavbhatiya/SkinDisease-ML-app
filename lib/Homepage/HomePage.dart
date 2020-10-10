@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 import 'package:skin_ML/Homepage/drawer.dart';
+import 'package:skin_ML/23DiseasesDataPage.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -33,17 +34,14 @@ class _MyHomePageState extends State<MyHomePage> {
   // var color1 = Color.fromRGBO(14, 49, 80, 1); //Dark purple
   // var color3 = Color.fromRGBO(248, 227, 255, 1);
   // var color4 = Color.fromRGBO(255, 241, 243, 1);
+  Map<int, bool> countToValue = <int, bool>{};
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: MyDrawer(),
       appBar: AppBar(
-        title: Align(
-          //mainAxisAlignment: MainAxisAlignment.center,
-          //children: <Widget>[],
-          child: Text('SkinShine'),
-          alignment: Alignment.centerLeft,
-        ),
+        centerTitle: true,
+        title: Text('SkinShine'),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -174,7 +172,100 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               SizedBox(height: 30),
-              Text("Today's Tip"),
+              Container(
+                width: MediaQuery.of(context).size.width - 10,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  border: Border.all(
+                    color: Colors.blueGrey,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "Skin Diseases List",
+                          style: TextStyle(
+                            fontSize: 23,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          height: 50.0,
+                          width: MediaQuery.of(context).size.width - 20,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(229, 33, 103, 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          height: 50.0,
+                          width: MediaQuery.of(context).size.width - 20,
+                          decoration: BoxDecoration(
+                            color: Color.fromRGBO(229, 33, 103, 1),
+                            borderRadius: BorderRadius.circular(10),
+                          ),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          height: 50.0,
+                          width: MediaQuery.of(context).size.width - 20,
+                          decoration: BoxDecoration(
+                              color: Color.fromRGBO(229, 33, 103, 1),
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(width: 0)),
+                        ),
+                      ),
+                      Card(
+                        child: Container(
+                          padding: EdgeInsets.all(0),
+                          height: 50.0,
+                          width: MediaQuery.of(context).size.width - 20,
+                          decoration: BoxDecoration(
+                              color: Color.fromRGBO(229, 33, 103, 1),
+                              borderRadius: BorderRadius.circular(10),
+                              border: Border.all(width: 0)),
+                        ),
+                      ),
+                      Container(
+                        height: 35,
+                        padding: EdgeInsets.all(0),
+                        // decoration: BoxDecoration(
+                        // borderRadius: BorderRadius.circular(10),
+                        // border: Border.all(width: 0)),
+                        width: MediaQuery.of(context).size.width - 20,
+                        child: FlatButton(
+                          padding: EdgeInsets.zero,
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DiseasesList()),
+                            );
+                          },
+                          child: Text(
+                            "See More",
+                            style: TextStyle(
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
               SizedBox(height: 20),
               Image.asset("assets/opening.jpg"),
               SizedBox(height: 20),
