@@ -47,15 +47,15 @@ class _MyNavBarState extends State<MyNavBar> {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
-          label: 'Home',
+          title: Text("home"),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.search),
-          label: 'Detect',
+          title: Text("detect"),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.chat),
-          label: 'Chat',
+          title: Text("chat"),
         )
       ],
       currentIndex: _selectedIndex,

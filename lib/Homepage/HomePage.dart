@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 import 'package:skin_ML/Homepage/drawer.dart';
+import 'package:skin_ML/news/newspage.dart';
 import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -267,6 +269,17 @@ class _MyHomePageState extends State<MyHomePage> {
               Image.asset("assets/opening.jpg"),
               SizedBox(height: 20),
               Text("Stay Updated with latest news"),
+              Container(
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => NewsPage()),
+                      );
+                    },
+                    child: Image.asset("assets/opening.jpg"),
+                  ),
+              ),
               SizedBox(height: 30.0),
               Container(
                 // decoration: BoxDecoration(color: Colors.white54),
