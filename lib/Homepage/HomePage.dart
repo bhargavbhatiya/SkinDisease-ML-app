@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 import 'package:skin_ML/Homepage/drawer.dart';
-import 'package:skin_ML/23DiseasesDataPage.dart';
+import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -240,9 +240,6 @@ class _MyHomePageState extends State<MyHomePage> {
                       Container(
                         height: 35,
                         padding: EdgeInsets.all(0),
-                        // decoration: BoxDecoration(
-                        // borderRadius: BorderRadius.circular(10),
-                        // border: Border.all(width: 0)),
                         width: MediaQuery.of(context).size.width - 20,
                         child: FlatButton(
                           padding: EdgeInsets.zero,

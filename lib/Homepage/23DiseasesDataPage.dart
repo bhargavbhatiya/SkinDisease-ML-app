@@ -1,6 +1,7 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
 
 class DiseasesList extends StatefulWidget {
   DiseasesList({Key key}) : super(key: key);
@@ -11,6 +12,10 @@ class DiseasesList extends StatefulWidget {
 
 class _DiseasesListState extends State<DiseasesList> {
   // ignore: non_constant_identifier_names
+  List<String> diseaseData = [
+    "name",
+    "Lorem ipsum oreet suspendisse interdum consecteturmet. as erat imperdiet. Amet mattis vulputate enim nulla. Tellus cras adipiscing enim eu turpis egestas pretium aenean. In cursus turpis massa tincidunt dui ut ornare lectus sit. Viverra vitae congue eu consequat. Orci dapibus ultrices in iaculis nunc sed. Volutpat blandit aliquam etiam erat velit scelerisque in dictum non. Eu mi bibendum neque egestas congue quisque egestas. Enim diam vulputate ut pharetra sit amet aliquam id. Ac tincidunt vitae semper quis. Nulla pharetra diam sit amet."
+  ];
   row_of_two_diseses_list(String _disesesName, int _index) {
     var _cardColor;
     if (_index % 3 == 0) {
@@ -45,7 +50,10 @@ class _DiseasesListState extends State<DiseasesList> {
           Navigator.push(
             this.context,
             // ignore: missing_return
-            MaterialPageRoute(builder: (context) {}),
+            MaterialPageRoute(
+              builder: (context) => DiseasesInfoPage(),
+              settings: RouteSettings(arguments: diseaseData),
+            ),
           );
         },
       ),
