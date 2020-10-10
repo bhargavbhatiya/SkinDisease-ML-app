@@ -16,6 +16,7 @@ class _DiseasesListState extends State<DiseasesList> {
     "name",
     "Lorem ipsum oreet suspendisse interdum consecteturmet. as erat imperdiet. Amet mattis vulputate enim nulla. Tellus cras adipiscing enim eu turpis egestas pretium aenean. In cursus turpis massa tincidunt dui ut ornare lectus sit. Viverra vitae congue eu consequat. Orci dapibus ultrices in iaculis nunc sed. Volutpat blandit aliquam etiam erat velit scelerisque in dictum non. Eu mi bibendum neque egestas congue quisque egestas. Enim diam vulputate ut pharetra sit amet aliquam id. Ac tincidunt vitae semper quis. Nulla pharetra diam sit amet."
   ];
+  // ignore: non_constant_identifier_names
   row_of_two_diseses_list(String _disesesName, int _index) {
     var _cardColor;
     if (_index % 3 == 0) {

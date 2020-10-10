@@ -9,7 +9,7 @@ class ML_Model extends StatefulWidget {
   _ML_ModelState createState() => _ML_ModelState();
 }
 
-enum Answers{camera, gallery}
+enum Answers { camera, gallery }
 
 // ignore: camel_case_types
 class _ML_ModelState extends State<ML_Model> {
@@ -52,13 +52,14 @@ class _ML_ModelState extends State<ML_Model> {
       _outputs = output;
     });
   }
+
   String _value = "";
+  // ignore: unused_element
   void _setValue(String value) => setState(() {
-    if (_value == "camera")
-      pickImageCamera();
-    else if (_value == "gallery") pickImageGallery();
-  }
-  );
+        if (_value == "camera")
+          pickImageCamera();
+        else if (_value == "gallery") pickImageGallery();
+      });
 
   @override
   void dispose() {
@@ -67,11 +68,13 @@ class _ML_ModelState extends State<ML_Model> {
   }
 
   pickImageCamera() async {
+    // ignore: deprecated_member_use
     image = await ImagePicker.pickImage(source: ImageSource.camera);
     detectDisease();
   }
 
-  pickImageGallery() async{
+  pickImageGallery() async {
+    // ignore: deprecated_member_use
     image = await ImagePicker.pickImage(source: ImageSource.gallery);
     detectDisease();
   }
@@ -123,22 +126,21 @@ class _ML_ModelState extends State<ML_Model> {
                           children: [
                             _image == null
                                 ? Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: MediaQuery.of(context).size.height *
-                                  0.65,
-                              alignment: Alignment.center,
-                              child: Text(
-                                "Choose an Image to predict Disease"
-                              ),
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                border: Border.all(
-                                  color: Colors.blueGrey,
-                                  width: 2,
-                                ),
-                                borderRadius: BorderRadius.circular(15),
-                              ),
-                            )
+                                    width: MediaQuery.of(context).size.width,
+                                    height: MediaQuery.of(context).size.height *
+                                        0.65,
+                                    alignment: Alignment.center,
+                                    child: Text(
+                                        "Choose an Image to predict Disease"),
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      border: Border.all(
+                                        color: Colors.blueGrey,
+                                        width: 2,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                  )
                                 : Container(
                                     width: MediaQuery.of(context).size.width,
                                     height: MediaQuery.of(context).size.height *
@@ -203,7 +205,9 @@ class _ML_ModelState extends State<ML_Model> {
       ),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Pick Image',
-        onPressed: () {pickImageGallery();},
+        onPressed: () {
+          pickImageGallery();
+        },
         child: Icon(
           Icons.add_a_photo,
           size: 20,

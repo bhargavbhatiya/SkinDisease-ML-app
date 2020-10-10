@@ -47,14 +47,17 @@ class _MyNavBarState extends State<MyNavBar> {
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
           icon: Icon(Icons.home),
+          // ignore: deprecated_member_use
           title: Text("home"),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.search),
+          // ignore: deprecated_member_use
           title: Text("detect"),
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.chat),
+          // ignore: deprecated_member_use
           title: Text("chat"),
         )
       ],
