@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 import 'package:skin_ML/Homepage/drawer.dart';
+import 'package:skin_ML/dailyproblems.dart';
 import 'package:skin_ML/news/newspage.dart';
 import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
-
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -118,6 +118,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Colors.greenAccent,
                           ),
                         ),
+                        Container(
+                          width: 30.0,
+                        )
                       ],
                     ),
                   ),
@@ -200,6 +203,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Card(
                         child: Container(
+                          child: Center(child: Text("Acne and Rosacea")),
                           height: 50.0,
                           width: MediaQuery.of(context).size.width - 20,
                           decoration: BoxDecoration(
@@ -210,6 +214,9 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Card(
                         child: Container(
+                          child: Center(
+                              child: Text(
+                                  "Actinic Keratosis Basal Cell Carcinoma and other Malignant Lesionsa")),
                           height: 50.0,
                           width: MediaQuery.of(context).size.width - 20,
                           decoration: BoxDecoration(
@@ -220,6 +227,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Card(
                         child: Container(
+                          child: Center(child: Text("Atopic Dermatitis")),
                           height: 50.0,
                           width: MediaQuery.of(context).size.width - 20,
                           decoration: BoxDecoration(
@@ -230,6 +238,7 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Card(
                         child: Container(
+                          child: Center(child: Text("Bullous Disease")),
                           padding: EdgeInsets.all(0),
                           height: 50.0,
                           width: MediaQuery.of(context).size.width - 20,
@@ -270,15 +279,15 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(height: 20),
               Text("Stay Updated with latest news"),
               Container(
-                  child: InkWell(
-                    onTap: (){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => NewsPage()),
-                      );
-                    },
-                    child: Image.asset("assets/opening.jpg"),
-                  ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => NewsPage()),
+                    );
+                  },
+                  child: Image.asset("assets/opening.jpg"),
+                ),
               ),
               SizedBox(height: 30.0),
               Container(
@@ -343,6 +352,9 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Color.fromRGBO(162, 253, 254, 1),
                           ),
                         ),
+                        Container(
+                          width: 30.0,
+                        )
                       ],
                     ),
                   ),

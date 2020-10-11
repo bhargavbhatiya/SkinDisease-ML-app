@@ -70,29 +70,41 @@ class _DiseasesListState extends State<DiseasesList> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            row_of_two_diseses_list("abc", 0),
-            row_of_two_diseses_list("xyz", 1),
-            row_of_two_diseses_list("opQ", 2),
-            row_of_two_diseses_list("srt", 3),
-            row_of_two_diseses_list("abc", 4),
-            row_of_two_diseses_list("xyz", 5),
-            row_of_two_diseses_list("opQ", 6),
-            row_of_two_diseses_list("srt", 7),
-            row_of_two_diseses_list("abc", 8),
-            row_of_two_diseses_list("xyz", 9),
-            row_of_two_diseses_list("opQ", 10),
-            row_of_two_diseses_list("srt", 11),
-            row_of_two_diseses_list("abc", 12),
-            row_of_two_diseses_list("xyz", 13),
-            row_of_two_diseses_list("opQ", 14),
-            row_of_two_diseses_list("srt", 15),
-            row_of_two_diseses_list("abc", 16),
-            row_of_two_diseses_list("xyz", 17),
-            row_of_two_diseses_list("opQ", 18),
-            row_of_two_diseses_list("srt", 19),
-            row_of_two_diseses_list("abc", 20),
-            row_of_two_diseses_list("xyz", 21),
-            row_of_two_diseses_list("opQ", 22),
+            row_of_two_diseses_list("Acne and Rosacea", 0),
+            row_of_two_diseses_list(
+                "Actinic Keratosis Basal Cell Carcinoma and other Malignant Lesions",
+                1),
+            row_of_two_diseses_list("Atopic Dermatitis", 2),
+            row_of_two_diseses_list("Bullous Disease", 3),
+            row_of_two_diseses_list(
+                "Cellulitis Impetigo and other Bacterial Infections", 4),
+            row_of_two_diseses_list("Eczema", 5),
+            row_of_two_diseses_list("Exanthems and Drug Eruptions", 6),
+            row_of_two_diseses_list(
+                "Hair Loss Photos Alopecia and other Hair Diseases", 7),
+            row_of_two_diseses_list("Herpes HPV and other STDs", 8),
+            row_of_two_diseses_list(
+                "Light Diseases and Disorders of Pigmentation", 9),
+            row_of_two_diseses_list(
+                "Lupus and other Connective Tissue diseases", 10),
+            row_of_two_diseses_list("Melanoma Skin Cancer Nevi and Moles", 11),
+            row_of_two_diseses_list("Nail Fungus and other Nail Disease", 12),
+            row_of_two_diseses_list(
+                "Poison Ivy Photos and other Contact Dermatitis", 13),
+            row_of_two_diseses_list(
+                "Psoriasis pictures Lichen Planus and related diseases", 14),
+            row_of_two_diseses_list(
+                "Scabies Lyme Disease and other Infestations and Bites", 15),
+            row_of_two_diseses_list(
+                "Seborrheic Keratoses and other Benign Tumors", 16),
+            row_of_two_diseses_list("Systemic Disease", 17),
+            row_of_two_diseses_list(
+                "Tinea Ringworm Candidiasis and other Fungal Infections", 18),
+            row_of_two_diseses_list("Urticaria Hives", 19),
+            row_of_two_diseses_list("Vascular Tumors", 20),
+            row_of_two_diseses_list("Vasculitis Photos", 21),
+            row_of_two_diseses_list(
+                "Warts Molluscum and other Viral Infections", 22),
           ],
         ),
       ),
