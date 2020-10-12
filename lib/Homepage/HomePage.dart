@@ -5,18 +5,35 @@ import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 import 'package:skin_ML/Homepage/drawer.dart';
 import 'package:skin_ML/news/newspage.dart';
 import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Skincare',
-      theme: ThemeData(
-        primaryColor: Color.fromRGBO(14, 49, 80, 1),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+    return SplashScreen(
+      seconds: 8,
+      backgroundColor: Colors.white,
+      image: Image.asset(
+        'assets/Skinshine.png',
+        alignment: Alignment.bottomCenter,
       ),
-      home: MyHomePage(title: 'Skincare'),
+      gradientBackground: LinearGradient(
+        colors: [
+          Colors.pink[100],
+          Colors.purple[300],
+        ],
+      ),
+      photoSize: 100,
+      loaderColor: Colors.black,
+      navigateAfterSeconds: MaterialApp(
+        title: 'Skincare',
+        theme: ThemeData(
+          primaryColor: Color.fromRGBO(14, 49, 80, 1),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
+        ),
+        home: MyHomePage(title: 'SkinShine'),
+      ),
     );
   }
 }
@@ -36,13 +53,18 @@ class _MyHomePageState extends State<MyHomePage> {
   // var color3 = Color.fromRGBO(248, 227, 255, 1);
   // var color4 = Color.fromRGBO(255, 241, 243, 1);
   Map<int, bool> countToValue = <int, bool>{};
+  Image appLogo = new Image(
+      image: new ExactAssetImage("assets/AppBarLogo1.png"),
+      height: 150.0,
+      width: 120.0,
+      alignment: FractionalOffset.center);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: MyDrawer(),
       appBar: AppBar(
         centerTitle: true,
-        title: Text('SkinShine'),
+        title: appLogo,
       ),
       body: SingleChildScrollView(
         child: Container(

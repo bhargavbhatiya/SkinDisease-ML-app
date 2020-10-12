@@ -30,6 +30,8 @@ dependencies:
   bubble: ^1.1.9+1
   webview_flutter: ^0.3.22
   http: ^0.12.2
+  splashscreen: ^1.2.0
+  google_fonts: ^1.1.0
 dev_dependencies:
   flutter_test:
     sdk: flutter

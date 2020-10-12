@@ -20,11 +20,11 @@ class _DiseasesListState extends State<DiseasesList> {
   row_of_two_diseses_list(String _disesesName, int _index) {
     var _cardColor;
     if (_index % 3 == 0) {
-      _cardColor = Color.fromRGBO(255, 58, 64, 0.85);
+      _cardColor = Color.fromRGBO(229, 184, 191, 1);
     } else if (_index % 3 == 1) {
-      _cardColor = Color.fromRGBO(70, 50, 57, 1);
+      _cardColor = Color.fromRGBO(229, 233, 199, 1);
     } else {
-      _cardColor = Color.fromRGBO(138, 132, 226, 1);
+      _cardColor = Color.fromRGBO(217, 221, 248, 1);
     }
     return Card(
       child: InkWell(
@@ -38,7 +38,7 @@ class _DiseasesListState extends State<DiseasesList> {
               padding: const EdgeInsets.only(left: 10),
               child: Text(
                 _disesesName,
-                style: TextStyle(fontSize: 20, color: Colors.white),
+                style: TextStyle(fontSize: 20, color: Colors.black87),
               ),
             ),
           ),

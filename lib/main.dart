@@ -8,6 +8,7 @@ void main() {
   runApp(
     MaterialApp(
       initialRoute: '/MyApp',
+      debugShowCheckedModeBanner: false,
       routes: {
         '/MyApp': (context) => MyApp(),
         '/ML_Model': (context) => ML_Model(),
