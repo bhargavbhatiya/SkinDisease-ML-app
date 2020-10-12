@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 import 'package:skin_ML/Homepage/drawer.dart';
-import 'package:skin_ML/dailyproblems.dart';
 import 'package:skin_ML/news/newspage.dart';
 import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
 
