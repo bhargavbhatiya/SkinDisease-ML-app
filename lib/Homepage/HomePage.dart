@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 import 'package:skin_ML/Homepage/drawer.dart';
 import 'package:skin_ML/news/newspage.dart';
@@ -75,6 +76,10 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(height: 10),
               Text(
                 "Solve your everyday problems: ",
+                style: GoogleFonts.robotoSlab(
+                    fontSize: 22,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.bold),
                 textAlign: TextAlign.left,
               ),
               Container(
@@ -86,7 +91,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
-                        SizedBox(width: 30),
+                        SizedBox(width: 15),
                         Container(
                           width: 160.0,
                           height: 30.0,
@@ -100,7 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Color.fromRGBO(163, 162, 254, 1),
                           ),
                         ),
-                        SizedBox(width: 30),
+                        SizedBox(width: 15),
                         Container(
                           width: 160.0,
                           height: 30.0,
@@ -113,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Color.fromRGBO(252, 96, 100, 1),
                           ),
                         ),
-                        SizedBox(width: 30),
+                        SizedBox(width: 15),
                         Container(
                           width: 160.0,
                           height: 30.0,
@@ -126,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Colors.blueGrey,
                           ),
                         ),
-                        SizedBox(width: 30),
+                        SizedBox(width: 15),
                         Container(
                           width: 160.0,
                           height: 30.0,
@@ -139,17 +144,14 @@ class _MyHomePageState extends State<MyHomePage> {
                             color: Colors.greenAccent,
                           ),
                         ),
-                        Container(
-                          width: 30.0,
-                        )
+                        SizedBox(width: 15),
                       ],
                     ),
                   ),
                 ),
               ),
-              SizedBox(width: 30),
-              Text(
-                  "Facing an issue: \n Scan your image and get instant results"),
+              // Text(
+              //   "Facing an issue: \n Scan your image and get instant results"),
               Container(
                 padding: EdgeInsets.symmetric(vertical: 30.0, horizontal: 30.0),
                 child: Container(
@@ -157,7 +159,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Image.asset("assets/opening.jpg"),
                 ),
               ),
-              Text("Clear your doubts: "),
+              Text(
+                "Clear your doubts: ",
+                style: GoogleFonts.robotoSlab(
+                    fontSize: 22,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.left,
+              ),
               SizedBox(height: 30),
               Center(
                 child: Row(
@@ -165,35 +174,59 @@ class _MyHomePageState extends State<MyHomePage> {
                   children: <Widget>[
                     Card(
                       child: Container(
-                        height: 120.0,
-                        width: MediaQuery.of(context).size.width / 2.3,
+                        height: 90.0,
+                        width: MediaQuery.of(context).size.width / 2.8,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.find_in_page_outlined,
+                              size: 30,
+                              color: Colors.yellow,
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              "Scan Your Image",
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(9, 17, 55, 1),
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
-                    // Container(
-                    //   color: Colors.green,
-                    //   height: 70.0,
-                    //   width: MediaQuery.of(context).size.width / 3,
-                    // ),
                     SizedBox(width: 5),
                     Card(
                       child: Container(
-                        height: 120.0,
-                        width: MediaQuery.of(context).size.width / 2.3,
+                        height: 90.0,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.chat_rounded,
+                              color: Colors.yellow,
+                              size: 30,
+                            ),
+                            SizedBox(height: 5),
+                            Text(
+                              "Contact to Us",
+                              style: TextStyle(
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                        width: MediaQuery.of(context).size.width / 2.8,
                         decoration: BoxDecoration(
                           color: Color.fromRGBO(229, 33, 103, 1),
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
                     ),
-                    // Container(
-                    //   color: Colors.blue,
-                    //   height: 70.0,
-                    //   width: MediaQuery.of(context).size.width / 3,
-                    // ),
                   ],
                 ),
               ),
@@ -216,16 +249,29 @@ class _MyHomePageState extends State<MyHomePage> {
                         padding: const EdgeInsets.all(8.0),
                         child: Text(
                           "Skin Diseases List",
-                          style: TextStyle(
-                            fontSize: 23,
-                            fontWeight: FontWeight.bold,
-                          ),
+                          style: GoogleFonts.robotoSlab(
+                              fontSize: 28,
+                              color: Colors.black87,
+                              fontWeight: FontWeight.bold),
+                          textAlign: TextAlign.left,
                         ),
                       ),
                       Card(
                         child: Container(
-                          child: Center(child: Text("Acne and Rosacea")),
-                          height: 50.0,
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Text(
+                                "Acne and Rosacea",
+                                style: GoogleFonts.ptSans(
+                                  fontSize: 19,
+                                  color: Color.fromRGBO(14, 49, 80, 1),
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                          ),
+                          // height: 50.0,
                           width: MediaQuery.of(context).size.width - 20,
                           decoration: BoxDecoration(
                             color: Color.fromRGBO(229, 33, 103, 1),
@@ -236,9 +282,19 @@ class _MyHomePageState extends State<MyHomePage> {
                       Card(
                         child: Container(
                           child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
                               child: Text(
-                                  "Actinic Keratosis Basal Cell Carcinoma and other Malignant Lesionsa")),
-                          height: 50.0,
+                                "Actinic Keratosis Basal Cell Carcinoma and other Malignant Lesionsa",
+                                style: GoogleFonts.ptSans(
+                                  fontSize: 19,
+                                  color: Color.fromRGBO(14, 49, 80, 1),
+                                ),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                          // height: 50.0,
                           width: MediaQuery.of(context).size.width - 20,
                           decoration: BoxDecoration(
                             color: Color.fromRGBO(229, 33, 103, 1),
@@ -248,8 +304,20 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Card(
                         child: Container(
-                          child: Center(child: Text("Atopic Dermatitis")),
-                          height: 50.0,
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Text(
+                                "Atopic Dermatitis",
+                                style: GoogleFonts.ptSans(
+                                  fontSize: 19,
+                                  color: Color.fromRGBO(14, 49, 80, 1),
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                          ),
+                          // height: 50.0,
                           width: MediaQuery.of(context).size.width - 20,
                           decoration: BoxDecoration(
                               color: Color.fromRGBO(229, 33, 103, 1),
@@ -259,9 +327,21 @@ class _MyHomePageState extends State<MyHomePage> {
                       ),
                       Card(
                         child: Container(
-                          child: Center(child: Text("Bullous Disease")),
+                          child: Center(
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Text(
+                                "Bullous Disease",
+                                style: GoogleFonts.ptSans(
+                                  fontSize: 19,
+                                  color: Color.fromRGBO(14, 49, 80, 1),
+                                ),
+                                textAlign: TextAlign.left,
+                              ),
+                            ),
+                          ),
                           padding: EdgeInsets.all(0),
-                          height: 50.0,
+                          // height: 50.0,
                           width: MediaQuery.of(context).size.width - 20,
                           decoration: BoxDecoration(
                               color: Color.fromRGBO(229, 33, 103, 1),
@@ -284,7 +364,7 @@ class _MyHomePageState extends State<MyHomePage> {
                           },
                           child: Text(
                             "See More",
-                            style: TextStyle(
+                            style: GoogleFonts.ptSans(
                                 fontSize: 20,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.blue),
@@ -298,7 +378,15 @@ class _MyHomePageState extends State<MyHomePage> {
               SizedBox(height: 20),
               Image.asset("assets/opening.jpg"),
               SizedBox(height: 20),
-              Text("Stay Updated with latest news"),
+              Text(
+                "Stay Updated with latest news",
+                style: GoogleFonts.robotoSlab(
+                    fontSize: 22,
+                    color: Colors.black87,
+                    fontWeight: FontWeight.bold),
+                textAlign: TextAlign.left,
+              ),
+              SizedBox(height: 20),
               Container(
                 child: InkWell(
                   onTap: () {
@@ -310,7 +398,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Image.asset("assets/opening.jpg"),
                 ),
               ),
-              SizedBox(height: 30.0),
+              SizedBox(height: 20.0),
               Container(
                 // decoration: BoxDecoration(color: Colors.white54),
                 child: Container(

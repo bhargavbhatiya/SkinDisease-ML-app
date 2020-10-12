@@ -1,6 +1,7 @@
 // ignore: avoid_web_libraries_in_flutter
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
 
 class DiseasesList extends StatefulWidget {
@@ -30,15 +31,20 @@ class _DiseasesListState extends State<DiseasesList> {
       child: InkWell(
         child: Container(
           padding: EdgeInsets.all(0),
-          height: 50.0,
+          // height: 50.0,
           width: MediaQuery.of(this.context).size.width - 20,
           child: Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.all(8),
               child: Text(
                 _disesesName,
-                style: TextStyle(fontSize: 20, color: Colors.black87),
+                style: GoogleFonts.ptSans(
+                  fontSize: 19,
+                  color: Color.fromRGBO(14, 49, 80, 1),
+                  fontWeight: FontWeight.w700,
+                ),
+                textAlign: TextAlign.left,
               ),
             ),
           ),
@@ -66,7 +72,12 @@ class _DiseasesListState extends State<DiseasesList> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Types Of Skin Diseases'),
+        title: Text(
+          'Types Of Skin Diseases',
+          style: GoogleFonts.robotoSlab(
+              fontSize: 21, color: Colors.white, fontWeight: FontWeight.bold),
+          textAlign: TextAlign.left,
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
