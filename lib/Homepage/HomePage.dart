@@ -7,6 +7,7 @@ import 'package:skin_ML/Homepage/drawer.dart';
 import 'package:skin_ML/news/newspage.dart';
 import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
 import 'package:splashscreen/splashscreen.dart';
+import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -56,6 +57,55 @@ class _MyHomePageState extends State<MyHomePage> {
   // var color1 = Color.fromRGBO(14, 49, 80, 1); //Dark purple
   var color3 = Color.fromRGBO(224, 140, 255, 0.2);
   // var color4 = Color.fromRGBO(255, 241, 243, 1);
+
+  row_of_two_diseses_list(String _disesesName, int _index) {
+    List<String> diseaseData = [
+      _disesesName,
+      dieses[_index][0],
+      dieses[_index][1],
+      dieses[_index][2],
+      dieses[_index][3]
+    ];
+    return Card(
+      child: InkWell(
+        child: Container(
+          padding: EdgeInsets.all(0),
+          // height: 50.0,
+          width: MediaQuery.of(this.context).size.width - 20,
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: const EdgeInsets.all(8),
+              child: Text(
+                _disesesName,
+                style: GoogleFonts.ptSans(
+                  fontSize: 19,
+                  color: Color.fromRGBO(14, 49, 80, 1),
+                  fontWeight: FontWeight.w700,
+                ),
+                textAlign: TextAlign.left,
+              ),
+            ),
+          ),
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(229, 33, 103, 1),
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        onTap: () {
+          Navigator.push(
+            this.context,
+            // ignore: missing_return
+            MaterialPageRoute(
+              builder: (context) => DiseasesInfoPage(),
+              settings: RouteSettings(arguments: diseaseData),
+            ),
+          );
+        },
+      ),
+    );
+  }
+
   Map<int, bool> countToValue = <int, bool>{};
   // Image appLogo = new Image(
   //     image: new ExactAssetImage("assets/AppBarLogo1.png"),
@@ -287,29 +337,13 @@ class _MyHomePageState extends State<MyHomePage> {
                           textAlign: TextAlign.left,
                         ),
                       ),
-                      Card(
-                        child: Container(
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                "Acne and Rosacea",
-                                style: GoogleFonts.ptSans(
-                                  fontSize: 19,
-                                  color: Color.fromRGBO(14, 49, 80, 1),
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                          ),
-                          // height: 50.0,
-                          width: MediaQuery.of(context).size.width - 20,
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(229, 33, 103, 1),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
+                      row_of_two_diseses_list("Acne and Rosacea", 0),
+                      row_of_two_diseses_list(
+                          "Actinic Keratosis Basal Cell Carcinoma and other Malignant Lesions",
+                          1),
+                      row_of_two_diseses_list("Atopic Dermatitis", 2),
+                      row_of_two_diseses_list("Bullous Disease", 3),
+                      /*
                       Card(
                         child: Container(
                           child: Center(
@@ -379,7 +413,7 @@ class _MyHomePageState extends State<MyHomePage> {
                               borderRadius: BorderRadius.circular(10),
                               border: Border.all(width: 0)),
                         ),
-                      ),
+                      ),*/
                       Container(
                         height: 35,
                         padding: EdgeInsets.all(0),

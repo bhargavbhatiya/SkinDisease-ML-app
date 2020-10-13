@@ -27,8 +27,42 @@ class _DiseasesInfoPageState extends State<DiseasesInfoPage> {
               children: [
                 Padding(
                   padding: const EdgeInsets.all(12.0),
+                  child: Image.network(DiseasesName[1]),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
                   child: Text(
-                    DiseasesName[1],
+                    DiseasesName[2],
+                    textAlign: TextAlign.justify,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    "Symptoms",
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    DiseasesName[3],
+                    textAlign: TextAlign.justify,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    "Treatment",
+                    textAlign: TextAlign.justify,
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Text(
+                    DiseasesName[4],
                     textAlign: TextAlign.justify,
                   ),
                 ),

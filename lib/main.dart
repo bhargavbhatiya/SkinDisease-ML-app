@@ -13,7 +13,7 @@ void main() {
         '/MyApp': (context) => MyApp(),
         '/ML_Model': (context) => ML_Model(),
         '/MyBot': (context) => MyBot(),
-        // '/dashboard': (context) => DashboardScreen(),
+        //'/dashboard': (context) => DashboardScreen(),
       },
     ),
   );
