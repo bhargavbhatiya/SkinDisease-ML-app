@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
+import 'package:skin_ML/ourteam.dart';
+import 'package:skin_ML/news/newspage.dart';
+import 'package:skin_ML/disease_predict_model.dart';
+import 'package:skin_ML/dailyproblems.dart';
+import 'package:skin_ML/chatbot.dart';
+import '23DiseasesDataPage.dart';
 
 class MyDrawer extends StatefulWidget {
   @override
@@ -36,28 +43,55 @@ class _MyDrawerState extends State<MyDrawer> {
             ),
           ),
           ListTile(
-            title: Text('My Account'),
-            onTap: () {},
+            title: Text('News'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => NewsPage()),
+              );
+            },
           ),
           ListTile(
-            title: Text('Logout'),
-            onTap: () {},
+            title: Text('Chat'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyBot()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Read about diseases'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => DiseasesInfoPage()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Solve daily problems'),
+            onTap: () {
+
+            },
           ),
           ListTile(
             title: Text('Detect Disease'),
-            onTap: () {},
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ML_Model()),
+              );
+            },
           ),
           ListTile(
-            title: Text('News'),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text('Solve Doubts'),
-            onTap: () {},
-          ),
-          ListTile(
-            title: Text('Talk to Expert'),
-            onTap: () {},
+            title: Text('About us'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => OurTeam()),
+              );
+            },
           )
         ],
       ),

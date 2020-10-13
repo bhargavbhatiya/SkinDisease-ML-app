@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      seconds: 8,
+      loadingText: Text("Loading"),
+      seconds: 5,
       backgroundColor: Color.fromRGBO(14, 49, 80, 1),
       image: Image.asset(
         'assets/SkinShine with text.png',
@@ -156,27 +157,56 @@ class _MyHomePageState extends State<MyHomePage> {
                         Container(
                           width: 160.0,
                           height: 30.0,
-                          child: Text(
-                            "Acne",
-                            textAlign: TextAlign.center,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: <Widget>[
+                              Text(
+                              "Acne",
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                fontStyle: FontStyle.normal,
+                                fontSize: 18.0,
+                                color: Color.fromRGBO(14, 49, 80, 1),
+                              ),
+                            ),
+                          ]
                           ),
                           decoration: BoxDecoration(
+                            color: Colors.greenAccent,
                             borderRadius: BorderRadius.circular(10),
+                            border: Border.all(
+                              color: Color.fromRGBO(14, 49, 80, 1),
+                              width: 3.0,
+                            ),
                             // color: Color.fromRGBO(18, 164, 217, 1),
-                            color: Color.fromRGBO(163, 162, 254, 1),
                           ),
                         ),
                         SizedBox(width: 15),
                         Container(
                           width: 160.0,
                           height: 30.0,
-                          child: Text(
-                            "Acne",
-                            textAlign: TextAlign.center,
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  "Pimples",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 18.0,
+                                    color: Color.fromRGBO(14, 49, 80, 1),
+                                  ),
+                                ),
+                              ]
                           ),
                           decoration: BoxDecoration(
+                            color: Colors.white38,
                             borderRadius: BorderRadius.circular(10),
-                            color: Color.fromRGBO(252, 96, 100, 1),
+                            border: Border.all(
+                              color: Color.fromRGBO(14, 49, 80, 1),
+                              width: 3.0,
+                            ),
+                            // color: Color.fromRGBO(18, 164, 217, 1),
                           ),
                         ),
                         SizedBox(width: 15),
@@ -240,11 +270,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.find_in_page_outlined,
-                              size: 30,
-                              color: Colors.yellow,
-                            ),
                             SizedBox(height: 5),
                             Text(
                               "Scan Your Image",
@@ -267,11 +292,6 @@ class _MyHomePageState extends State<MyHomePage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.chat_rounded,
-                              color: Colors.yellow,
-                              size: 30,
-                            ),
                             SizedBox(height: 5),
                             Text(
                               "Contact to Us",
