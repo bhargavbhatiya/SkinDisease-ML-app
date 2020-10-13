@@ -14,20 +14,22 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return SplashScreen(
       seconds: 8,
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromRGBO(14, 49, 80, 1),
       image: Image.asset(
-        'assets/Skinshine.png',
+        'assets/SkinShine with text.png',
         alignment: Alignment.bottomCenter,
       ),
-      gradientBackground: LinearGradient(
-        colors: [
-          Colors.pink[100],
-          Colors.purple[300],
-        ],
-      ),
-      photoSize: 100,
-      loaderColor: Colors.black,
+
+      // gradientBackground: LinearGradient(
+      //   colors: [
+      //     Colors.pink[100],
+      //     Colors.purple[300],
+      //   ],
+      // ),
+      photoSize: 165,
+      loaderColor: Colors.white,
       navigateAfterSeconds: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Skincare',
         theme: ThemeData(
           primaryColor: Color.fromRGBO(14, 49, 80, 1),
@@ -49,23 +51,32 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var color3 = Color.fromRGBO(247, 233, 227, 1);
+  // var color3 = Color.fromRGBO(247, 233, 227, 1);
   // var color1 = Color.fromRGBO(14, 49, 80, 1); //Dark purple
-  // var color3 = Color.fromRGBO(248, 227, 255, 1);
+  var color3 = Color.fromRGBO(224, 140, 255, 0.2);
   // var color4 = Color.fromRGBO(255, 241, 243, 1);
   Map<int, bool> countToValue = <int, bool>{};
-  Image appLogo = new Image(
-      image: new ExactAssetImage("assets/AppBarLogo1.png"),
-      height: 150.0,
-      width: 120.0,
-      alignment: FractionalOffset.center);
+  // Image appLogo = new Image(
+  //     image: new ExactAssetImage("assets/AppBarLogo1.png"),
+  //     height: 150.0,
+  //     width: 120.0,
+  //     alignment: FractionalOffset.center);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: MyDrawer(),
       appBar: AppBar(
         centerTitle: true,
-        title: appLogo,
+        // title: appLogo,
+        title: Text(
+          "SKINSHINE",
+          style: GoogleFonts.barlow(
+              fontSize: 27,
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+              letterSpacing: 3),
+          textAlign: TextAlign.left,
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(
