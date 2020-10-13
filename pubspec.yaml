@@ -51,7 +51,7 @@ flutter:
     - assets/cupcakesbot-qlrcih-9c82160e9e70.json
     - assets/bot.png
     - assets/user.png
-    - assets/
+    - assets/.
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

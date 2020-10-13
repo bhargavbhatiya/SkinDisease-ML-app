@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
+import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 
 // ignore: camel_case_types
 class ML_Model extends StatefulWidget {
@@ -203,6 +204,7 @@ class _ML_ModelState extends State<ML_Model> {
           ),
         ),
       ),
+      bottomNavigationBar: MyNavBar(),
       floatingActionButton: FloatingActionButton(
         tooltip: 'Pick Image',
         onPressed: () {

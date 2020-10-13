@@ -37,7 +37,7 @@ class _DiseasesInfoPageState extends State<DiseasesInfoPage> {
                     border: Border.all(width: 0),
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  child: TextButton(
+                  child: RaisedButton(
                     child: Text(
                       'Go Back',
                       style:

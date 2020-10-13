@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'apikey.dart';
 import 'webview.dart';
+import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 
 class NewsPage extends StatefulWidget {
   @override
@@ -29,6 +30,10 @@ class _NewsPageState extends State<NewsPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text("Health News", textAlign: TextAlign.center,),
+        backgroundColor: Color.fromRGBO(14, 49, 80, 1),
+      ),
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -89,7 +94,7 @@ class _NewsPageState extends State<NewsPage> {
                                   disabledColor: Colors.purpleAccent,
                                   padding: EdgeInsets.all(1.0),
                                   elevation: 10,
-                                  color: Colors.black,
+                                  color: Color.fromRGBO(14, 49, 80, 1),
                                   splashColor: Colors.cyan[200],
                                   colorBrightness: Brightness.dark,
                                   onPressed: () {
@@ -101,7 +106,7 @@ class _NewsPageState extends State<NewsPage> {
                                                     .data[index].url)));
                                   },
                                   child: Text(
-                                    "View",
+                                    "Read More",
                                   ),
                                 ),
                                 SizedBox(
@@ -116,6 +121,7 @@ class _NewsPageState extends State<NewsPage> {
           ],
         ),
       ),
+      bottomNavigationBar: MyNavBar(),
     );
   }
 }
