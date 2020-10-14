@@ -8,6 +8,7 @@ import 'package:skin_ML/news/newspage.dart';
 import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -134,7 +135,88 @@ class _MyHomePageState extends State<MyHomePage> {
           decoration: BoxDecoration(color: color3),
           child: Column(
             children: <Widget>[
-              Image.asset('assets/opening.jpg'),
+              //Image.asset('assets/opening.jpg'),
+              Container (
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget> [
+                    CarouselSlider(
+                        //height: 400.0,
+                        initialPage: 0,
+                        enlargeCenterPage: true,
+                        autoPlay: true,
+                        reverse: false,
+                        enableInfiniteScroll: true,
+                        autoPlayInterval: Duration(seconds: 5),
+                        autoPlayAnimationDuration: Duration(milliseconds: 3000),
+                        pauseAutoPlayOnTouch: Duration(seconds: 10),
+                        scrollDirection: Axis.horizontal,
+                        onPageChanged: (index) {
+                        int _current = 0;
+                        setState(() {
+                          _current = index;
+                        });},
+                        items: [
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                image: DecorationImage(
+                                    image: AssetImage('assets/Images/img1.jpg'),
+                                    fit: BoxFit.cover,
+                                  )
+                             ),
+                      ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/Images/img2.jpg'),
+                                  fit: BoxFit.cover,
+                                )
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/Images/img3.jpg'),
+                                  fit: BoxFit.cover,
+                                )
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/Images/img4.jpg'),
+                                  fit: BoxFit.cover,
+                                )
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/Images/img5.jpg'),
+                                  fit: BoxFit.cover,
+                                )
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(10.0),
+                                image: DecorationImage(
+                                  image: AssetImage('assets/Images/img7.jpg'),
+                                  fit: BoxFit.cover,
+                                )
+                            ),
+                          )
+                  ]
+              ),
+                  ]
+              ),
+              ),
               SizedBox(height: 10),
               Text(
                 "Solve your everyday problems: ",
@@ -534,11 +616,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-              SizedBox(height: 30.0),
+                  SizedBox(height: 30.0),
             ],
           ),
         ),
-      ),
+
+    ),
       bottomNavigationBar: MyNavBar(),
     );
   }

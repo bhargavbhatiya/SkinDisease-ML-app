@@ -24,6 +24,7 @@ dependencies:
   flutter:
     sdk: flutter
   tflite: ^1.1.1
+  carousel_slider: ^1.3.0
   image_picker: ^0.6.7+11
   cupertino_icons: ^0.1.3
   flutter_dialogflow: ^0.1.3
@@ -52,6 +53,12 @@ flutter:
     - assets/bot.png
     - assets/user.png
     - assets/.
+    - assets/Images/img1.jpg
+    - assets/Images/img2.jpg
+    - assets/Images/img3.jpg
+    - assets/Images/img4.jpg
+    - assets/Images/img5.jpg
+    - assets/Images/img7.jpg
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
