@@ -14,9 +14,7 @@ class _MyNavBarState extends State<MyNavBar> {
   int _selectedIndex = 0;
 
   void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
+    _selectedIndex = index;
     if (_selectedIndex == 1) {
       Navigator.of(context).push(
         CupertinoPageRoute(
@@ -25,7 +23,7 @@ class _MyNavBarState extends State<MyNavBar> {
         ),
       );
     }
-    if (_selectedIndex == 2) {
+    if (_selectedIndex == 3) {
       Navigator.of(context).push(
         CupertinoPageRoute(
           fullscreenDialog: true,
@@ -33,16 +31,24 @@ class _MyNavBarState extends State<MyNavBar> {
         ),
       );
     }
-    _selectedIndex = 0;
+    if (_selectedIndex == 2) {
+      Navigator.of(context).push(
+        CupertinoPageRoute(
+          fullscreenDialog: true,
+          builder: (context) => NewsPage(),
+        ),
+      );
+    }
+    setState(() {
+      _selectedIndex = index;
+    });
+    // _selectedIndex = 0;
   }
-
-  // var color2 = Color.fromRGBO(255, 192, 194, 1);
-  // var color1 = Color.fromRGBO(150, 1, 178, 1);
-  // var color4 = Color.fromRGBO(255, 177, 187, 1);
 
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       backgroundColor: Color.fromRGBO(250, 255, 250, 1),
       items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(
@@ -56,14 +62,19 @@ class _MyNavBarState extends State<MyNavBar> {
           title: Text("detect"),
         ),
         BottomNavigationBarItem(
+          icon: Icon(CupertinoIcons.news),
+          // ignore: deprecated_member_use
+          title: Text("news"),
+        ),
+        BottomNavigationBarItem(
           icon: Icon(Icons.chat),
           // ignore: deprecated_member_use
           title: Text("chat"),
         )
       ],
       currentIndex: _selectedIndex,
-      selectedItemColor: Color.fromRGBO(14, 49, 80, 1),
       onTap: _onItemTapped,
+      selectedItemColor: Color.fromRGBO(14, 49, 80, 1),
     );
   }
 }

@@ -3,9 +3,7 @@ import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
 import 'package:skin_ML/ourteam.dart';
 import 'package:skin_ML/news/newspage.dart';
 import 'package:skin_ML/disease_predict_model.dart';
-import 'package:skin_ML/dailyproblems.dart';
 import 'package:skin_ML/chatbot.dart';
-import '23DiseasesDataPage.dart';
 
 class MyDrawer extends StatefulWidget {
   @override
@@ -71,9 +69,7 @@ class _MyDrawerState extends State<MyDrawer> {
           ),
           ListTile(
             title: Text('Solve daily problems'),
-            onTap: () {
-
-            },
+            onTap: () {},
           ),
           ListTile(
             title: Text('Detect Disease'),

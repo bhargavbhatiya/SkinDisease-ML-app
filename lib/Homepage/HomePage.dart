@@ -59,6 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var color3 = Color.fromRGBO(224, 140, 255, 0.2);
   // var color4 = Color.fromRGBO(255, 241, 243, 1);
 
+  // ignore: non_constant_identifier_names
   row_of_two_diseses_list(String _disesesName, int _index) {
     List<String> diseaseData = [
       _disesesName,
@@ -136,86 +137,78 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Column(
             children: <Widget>[
               //Image.asset('assets/opening.jpg'),
-              Container (
+              Container(
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget> [
-                    CarouselSlider(
-                        //height: 400.0,
-                        initialPage: 0,
-                        enlargeCenterPage: true,
-                        autoPlay: true,
-                        reverse: false,
-                        enableInfiniteScroll: true,
-                        autoPlayInterval: Duration(seconds: 5),
-                        autoPlayAnimationDuration: Duration(milliseconds: 3000),
-                        pauseAutoPlayOnTouch: Duration(seconds: 10),
-                        scrollDirection: Axis.horizontal,
-                        onPageChanged: (index) {
-                        int _current = 0;
-                        setState(() {
-                          _current = index;
-                        });},
-                        items: [
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: <Widget>[
+                      SizedBox(height: 10),
+                      CarouselSlider(
+                          //height: 400.0,
+                          initialPage: 0,
+                          enlargeCenterPage: true,
+                          autoPlay: true,
+                          reverse: false,
+                          enableInfiniteScroll: true,
+                          autoPlayInterval: Duration(seconds: 5),
+                          autoPlayAnimationDuration:
+                              Duration(milliseconds: 3000),
+                          pauseAutoPlayOnTouch: Duration(seconds: 10),
+                          scrollDirection: Axis.horizontal,
+                          onPageChanged: (index) {
+                            setState(() {});
+                          },
+                          items: [
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  image: DecorationImage(
                                     image: AssetImage('assets/Images/img1.jpg'),
                                     fit: BoxFit.cover,
-                                  )
-                             ),
-                      ),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/Images/img2.jpg'),
-                                  fit: BoxFit.cover,
-                                )
+                                  )),
                             ),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/Images/img3.jpg'),
-                                  fit: BoxFit.cover,
-                                )
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/Images/img2.jpg'),
+                                    fit: BoxFit.cover,
+                                  )),
                             ),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/Images/img4.jpg'),
-                                  fit: BoxFit.cover,
-                                )
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/Images/img3.jpg'),
+                                    fit: BoxFit.cover,
+                                  )),
                             ),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/Images/img5.jpg'),
-                                  fit: BoxFit.cover,
-                                )
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/Images/img4.jpg'),
+                                    fit: BoxFit.cover,
+                                  )),
                             ),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(10.0),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/Images/img7.jpg'),
-                                  fit: BoxFit.cover,
-                                )
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/Images/img5.jpg'),
+                                    fit: BoxFit.cover,
+                                  )),
                             ),
-                          )
-                  ]
-              ),
-                  ]
-              ),
+                            Container(
+                              decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/Images/img7.jpg'),
+                                    fit: BoxFit.cover,
+                                  )),
+                            )
+                          ]),
+                    ]),
               ),
               SizedBox(height: 10),
               Text(
@@ -240,19 +233,18 @@ class _MyHomePageState extends State<MyHomePage> {
                           width: 160.0,
                           height: 30.0,
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: <Widget>[
-                              Text(
-                              "Acne",
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                fontStyle: FontStyle.normal,
-                                fontSize: 18.0,
-                                color: Color.fromRGBO(14, 49, 80, 1),
-                              ),
-                            ),
-                          ]
-                          ),
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Text(
+                                  "Acne",
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    fontStyle: FontStyle.normal,
+                                    fontSize: 18.0,
+                                    color: Color.fromRGBO(14, 49, 80, 1),
+                                  ),
+                                ),
+                              ]),
                           decoration: BoxDecoration(
                             color: Colors.greenAccent,
                             borderRadius: BorderRadius.circular(10),
@@ -279,8 +271,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                     color: Color.fromRGBO(14, 49, 80, 1),
                                   ),
                                 ),
-                              ]
-                          ),
+                              ]),
                           decoration: BoxDecoration(
                             color: Colors.white38,
                             borderRadius: BorderRadius.circular(10),
@@ -616,12 +607,11 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
-                  SizedBox(height: 30.0),
+              SizedBox(height: 30.0),
             ],
           ),
         ),
-
-    ),
+      ),
       bottomNavigationBar: MyNavBar(),
     );
   }
