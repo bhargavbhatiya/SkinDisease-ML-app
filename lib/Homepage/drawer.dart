@@ -5,7 +5,6 @@ import 'package:skin_ML/services/ourteam.dart';
 import 'package:skin_ML/news/newspage.dart';
 import 'package:skin_ML/services/disease_predict_model.dart';
 import 'package:skin_ML/services/chatbot.dart';
-import 'package:skin_ML/Homepage/reminder.dart';
 
 class MyDrawer extends StatefulWidget {
   @override
@@ -22,14 +21,6 @@ class _MyDrawerState extends State<MyDrawer> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // Text(
-                //   "SkinShine",
-                //   style: GoogleFonts.dancingScript(
-                //       color: Colors.white,
-                //       fontSize: 30,
-                //       fontWeight: FontWeight.w900),
-                // ),
-                // SizedBox(height: 10),
                 Container(
                     child: Image.asset(
                   "assets/SkinShine with text.png",

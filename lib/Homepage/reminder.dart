@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 void main() => runApp(new MaterialApp(
-  theme: ThemeData(
-      appBarTheme: AppBarTheme(
+      theme: ThemeData(
+          appBarTheme: AppBarTheme(
         color: Colors.red,
       )),
-  home: new MyReminder(),
-));
+      home: new MyReminder(),
+    ));
 
 class MyReminder extends StatefulWidget {
   @override
@@ -17,13 +17,13 @@ class MyReminder extends StatefulWidget {
 
 class _MyAppState extends State<MyReminder> {
   FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
-  FlutterLocalNotificationsPlugin();
+      FlutterLocalNotificationsPlugin();
 
   @override
   void initState() {
     super.initState();
     var initializationSettingsAndroid =
-    AndroidInitializationSettings('@mipmap/ic_launcher');
+        AndroidInitializationSettings('@mipmap/ic_launcher');
     var initializationSettingsIOs = IOSInitializationSettings();
     var initSetttings = InitializationSettings(
         android: initializationSettingsAndroid, iOS: initializationSettingsIOs);
@@ -32,6 +32,7 @@ class _MyAppState extends State<MyReminder> {
         onSelectNotification: onSelectNotification);
   }
 
+  // ignore: missing_return
   Future onSelectNotification(String payload) {
     Navigator.of(context).push(MaterialPageRoute(builder: (_) {
       return NewScreen(
@@ -88,8 +89,8 @@ class _MyAppState extends State<MyReminder> {
 
   Future<void> repeatedNotification() async {
     const AndroidNotificationDetails androidPlatformChannelSpecifics =
-    AndroidNotificationDetails('repeating channel id',
-        'repeating channel name', 'repeating description');
+        AndroidNotificationDetails('repeating channel id',
+            'repeating channel name', 'repeating description');
     const NotificationDetails platformChannelSpecifics = NotificationDetails(
         android: androidPlatformChannelSpecifics, iOS: null);
     await flutterLocalNotificationsPlugin.periodicallyShow(
@@ -117,6 +118,7 @@ class _MyAppState extends State<MyReminder> {
   }
 }
 
+// ignore: must_be_immutable
 class NewScreen extends StatelessWidget {
   String payload;
 
