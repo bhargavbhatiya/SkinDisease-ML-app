@@ -33,7 +33,7 @@ dependencies:
   http: ^0.12.2
   splashscreen: ^1.2.0
   google_fonts: ^1.1.0
-
+  flutter_local_notifications: ^2.0.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -60,6 +60,7 @@ flutter:
     - assets/Images/img4.jpg
     - assets/Images/img5.jpg
     - assets/Images/img7.jpg
+    - assets/water.jpg
     # - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
