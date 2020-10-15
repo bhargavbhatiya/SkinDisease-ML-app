@@ -11,7 +11,6 @@ class NewsPage extends StatefulWidget {
 }
 
 class _NewsPageState extends State<NewsPage> {
-
   getnews() async {
     var url =
         'https://newsapi.org/v2/top-headlines?country=us&apiKey=$apikey&category=health';
@@ -31,7 +30,10 @@ class _NewsPageState extends State<NewsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Health News", textAlign: TextAlign.center,),
+        title: Text(
+          "Health News",
+          textAlign: TextAlign.center,
+        ),
         backgroundColor: Color.fromRGBO(14, 49, 80, 1),
       ),
       body: SingleChildScrollView(
@@ -99,11 +101,13 @@ class _NewsPageState extends State<NewsPage> {
                                   colorBrightness: Brightness.dark,
                                   onPressed: () {
                                     Navigator.push(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) => ViewWeb(
-                                                dataSnapshot
-                                                    .data[index].url)));
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => ViewWeb(
+                                          dataSnapshot.data[index].url,
+                                        ),
+                                      ),
+                                    );
                                   },
                                   child: Text(
                                     "Read More",

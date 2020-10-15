@@ -96,7 +96,7 @@ class _ML_ModelState extends State<ML_Model> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Skin Disease predictor",
+          _outputs[0][0],
           style: TextStyle(color: Colors.white, fontSize: 23),
         ),
         backgroundColor: Color.fromRGBO(14, 49, 80, 1),

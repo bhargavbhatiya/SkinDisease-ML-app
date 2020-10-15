@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
-import 'package:skin_ML/ourteam.dart';
+import 'package:skin_ML/services/ourteam.dart';
 import 'package:skin_ML/news/newspage.dart';
-import 'package:skin_ML/disease_predict_model.dart';
-import 'package:skin_ML/chatbot.dart';
+import 'package:skin_ML/services/disease_predict_model.dart';
+import 'package:skin_ML/services/chatbot.dart';
 
 class MyDrawer extends StatefulWidget {
   @override

@@ -4,7 +4,6 @@ import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 import 'package:skin_ML/Homepage/drawer.dart';
-import 'package:skin_ML/news/newspage.dart';
 import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
@@ -24,13 +23,6 @@ class MyApp extends StatelessWidget {
         'assets/SkinShine with text.png',
         alignment: Alignment.bottomCenter,
       ),
-
-      // gradientBackground: LinearGradient(
-      //   colors: [
-      //     Colors.pink[100],
-      //     Colors.purple[300],
-      //   ],
-      // ),
       photoSize: 165,
       loaderColor: Colors.white,
       navigateAfterSeconds: MaterialApp(
@@ -79,20 +71,20 @@ class _MyHomePageState extends State<MyHomePage> {
           child: Align(
             alignment: Alignment.centerLeft,
             child: Padding(
-              padding: const EdgeInsets.all(8),
+              padding: const EdgeInsets.all(10),
               child: Text(
                 _disesesName,
                 style: GoogleFonts.ptSans(
-                  fontSize: 19,
-                  color: Color.fromRGBO(14, 49, 80, 1),
-                  fontWeight: FontWeight.w700,
+                  fontSize: 18,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w600,
                 ),
                 textAlign: TextAlign.left,
               ),
             ),
           ),
           decoration: BoxDecoration(
-            color: Color.fromRGBO(229, 33, 103, 1),
+            color: Color.fromRGBO(229, 33, 103, 0.52),
             borderRadius: BorderRadius.circular(10),
           ),
         ),
@@ -110,14 +102,15 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
+  // ignore: non_constant_identifier_names
   page_of_daily_problems(String _dailyProblemName, int _index) {
     var _cardColor;
     if (_index % 3 == 0) {
-      _cardColor = Color.fromRGBO(229, 184, 191, 1);
+      _cardColor = Color.fromRGBO(250, 200, 223, 1); //light pink
     } else if (_index % 3 == 1) {
-      _cardColor = Color.fromRGBO(229, 233, 199, 1);
+      _cardColor = Color.fromRGBO(229, 233, 199, 1); //light green
     } else {
-      _cardColor = Color.fromRGBO(217, 221, 248, 1);
+      _cardColor = Color.fromRGBO(217, 221, 248, 1); //light green
     }
     List dailyProblemData = [_dailyProblemName, dailyproblems[_index]];
     return Card(
@@ -152,11 +145,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Map<int, bool> countToValue = <int, bool>{};
-  // Image appLogo = new Image(
-  //     image: new ExactAssetImage("assets/AppBarLogo1.png"),
-  //     height: 150.0,
-  //     width: 120.0,
-  //     alignment: FractionalOffset.center);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -322,29 +311,39 @@ class _MyHomePageState extends State<MyHomePage> {
                     fontWeight: FontWeight.bold),
                 textAlign: TextAlign.left,
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 15),
               Center(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Card(
                       child: Container(
-                        height: 90.0,
+                        height: 70.0,
                         width: MediaQuery.of(context).size.width / 2.8,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(height: 5),
+                            Icon(
+                              Icons.search,
+                              color: Colors.black,
+                            ),
+                            SizedBox(height: 3),
                             Text(
                               "Scan Your Image",
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
+                              style: GoogleFonts.robotoSlab(
+                                  // fontSize: 28,
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.bold),
                             ),
+                            //   style: TextStyle(
+                            //       color: Colors.black,
+                            //       fontWeight: FontWeight.bold,),
+                            // ),
                           ],
                         ),
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(9, 17, 55, 1),
+                          color: Color.fromRGBO(85, 233, 199, 1),
+                          // color: Color.fromRGBO(9, 17, 55, 1),
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
@@ -352,22 +351,31 @@ class _MyHomePageState extends State<MyHomePage> {
                     SizedBox(width: 5),
                     Card(
                       child: Container(
-                        height: 90.0,
+                        height: 70.0,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            SizedBox(height: 5),
+                            Icon(
+                              Icons.person,
+                              color: Colors.black,
+                            ),
+                            SizedBox(height: 3),
                             Text(
                               "Contact to Us",
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
+                              style: GoogleFonts.robotoSlab(
+                                  // fontSize: 28,
+                                  color: Colors.black87,
+                                  fontWeight: FontWeight.bold),
+                              // style: TextStyle(
+                              //   color: Colors.white,
+                              // ),
                             ),
                           ],
                         ),
                         width: MediaQuery.of(context).size.width / 2.8,
                         decoration: BoxDecoration(
-                          color: Color.fromRGBO(229, 33, 103, 1),
+                          color: Color.fromRGBO(173, 182, 248, 1),
+                          // color: Color.fromRGBO(229, 33, 103, 1),
                           borderRadius: BorderRadius.circular(10),
                         ),
                       ),
@@ -391,12 +399,12 @@ class _MyHomePageState extends State<MyHomePage> {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(9.0),
                         child: Text(
                           "Skin Diseases List",
                           style: GoogleFonts.robotoSlab(
                               fontSize: 28,
-                              color: Colors.black87,
+                              color: Color.fromRGBO(14, 49, 80, 1),
                               fontWeight: FontWeight.bold),
                           textAlign: TextAlign.left,
                         ),
@@ -445,17 +453,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 textAlign: TextAlign.left,
               ),
               SizedBox(height: 20),
-              Container(
-                child: InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => NewsPage()),
-                    );
-                  },
-                  child: Image.asset("assets/opening.jpg"),
-                ),
-              ),
+              // Container(child: ,),
               SizedBox(height: 20.0),
               Container(
                 // decoration: BoxDecoration(color: Colors.white54),

@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:skin_ML/Homepage/HomePage.dart';
-import 'package:skin_ML/disease_predict_model.dart';
-import 'package:skin_ML/chatbot.dart';
+import 'package:skin_ML/services/disease_predict_model.dart';
+import 'package:skin_ML/services/chatbot.dart';
 
 void main() {
   runApp(

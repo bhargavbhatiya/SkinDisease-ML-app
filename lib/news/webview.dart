@@ -12,8 +12,10 @@ class _ViewWebState extends State<ViewWeb> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: WebView(
-        initialUrl: widget.url,
+      body: SafeArea(
+        child: WebView(
+          initialUrl: widget.url,
+        ),
       ),
     );
   }
