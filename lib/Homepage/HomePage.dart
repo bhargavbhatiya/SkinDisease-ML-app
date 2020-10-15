@@ -9,6 +9,8 @@ import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:skin_ML/Homepage/DailyProblemsInfoPage.dart';
+import 'package:skin_ML/Homepage/DailyProblemsPage.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -105,6 +107,47 @@ class _MyHomePageState extends State<MyHomePage> {
           );
         },
       ),
+    );
+  }
+
+  page_of_daily_problems(String _dailyProblemName, int _index) {
+    var _cardColor;
+    if (_index % 3 == 0) {
+      _cardColor = Color.fromRGBO(229, 184, 191, 1);
+    } else if (_index % 3 == 1) {
+      _cardColor = Color.fromRGBO(229, 233, 199, 1);
+    } else {
+      _cardColor = Color.fromRGBO(217, 221, 248, 1);
+    }
+    List dailyProblemData = [_dailyProblemName, dailyproblems[_index]];
+    return Card(
+      color: _cardColor,
+      child: InkWell(
+          child: Container(
+            padding: EdgeInsets.all(0),
+            height: 20.0,
+            width: 160.0,
+            child: Center(
+              child: Text(
+                _dailyProblemName,
+                textAlign: TextAlign.center,
+              ),
+            ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: _cardColor,
+            ),
+          ),
+          onTap: () {
+            Navigator.push(
+              this.context,
+              // ignore: missing_return
+              MaterialPageRoute(
+                builder: (context) => DailyProblemsPage(),
+                settings: RouteSettings(arguments: dailyProblemData),
+              ),
+            );
+          }),
     );
   }
 
@@ -223,91 +266,39 @@ class _MyHomePageState extends State<MyHomePage> {
                 // decoration: BoxDecoration(color: Colors.white),
                 child: Container(
                   margin: EdgeInsets.symmetric(vertical: 20.0),
-                  height: 100.0,
+                  height: 60.0,
                   child: Center(
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: <Widget>[
                         SizedBox(width: 15),
-                        Container(
-                          width: 160.0,
-                          height: 30.0,
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  "Acne",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 18.0,
-                                    color: Color.fromRGBO(14, 49, 80, 1),
-                                  ),
-                                ),
-                              ]),
-                          decoration: BoxDecoration(
-                            color: Colors.greenAccent,
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color: Color.fromRGBO(14, 49, 80, 1),
-                              width: 3.0,
-                            ),
-                            // color: Color.fromRGBO(18, 164, 217, 1),
-                          ),
-                        ),
-                        SizedBox(width: 15),
-                        Container(
-                          width: 160.0,
-                          height: 30.0,
-                          child: Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: <Widget>[
-                                Text(
-                                  "Pimples",
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                    fontStyle: FontStyle.normal,
-                                    fontSize: 18.0,
-                                    color: Color.fromRGBO(14, 49, 80, 1),
-                                  ),
-                                ),
-                              ]),
-                          decoration: BoxDecoration(
-                            color: Colors.white38,
-                            borderRadius: BorderRadius.circular(10),
-                            border: Border.all(
-                              color: Color.fromRGBO(14, 49, 80, 1),
-                              width: 3.0,
-                            ),
-                            // color: Color.fromRGBO(18, 164, 217, 1),
-                          ),
-                        ),
-                        SizedBox(width: 15),
-                        Container(
-                          width: 160.0,
-                          height: 30.0,
-                          child: Text(
-                            "Acne",
-                            textAlign: TextAlign.center,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.blueGrey,
-                          ),
-                        ),
-                        SizedBox(width: 15),
-                        Container(
-                          width: 160.0,
-                          height: 30.0,
-                          child: Text(
-                            "Acne",
-                            textAlign: TextAlign.center,
-                          ),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            color: Colors.greenAccent,
-                          ),
-                        ),
+                        page_of_daily_problems("Scars", 0),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Wrinkles", 1),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Dark Circles", 2),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Acne breakouts", 3),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Dry/Irritated skin", 4),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Folliculitis", 5),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Prickly heat", 6),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Sunburn", 7),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Sun allergy", 8),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Varicose veins", 9),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("White spots", 10),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Stretch marks", 11),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Swimmer’s itch", 12),
+                        SizedBox(width: 10),
+                        page_of_daily_problems("Dandruff", 13),
                         SizedBox(width: 15),
                       ],
                     ),
@@ -416,77 +407,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           1),
                       row_of_two_diseses_list("Atopic Dermatitis", 2),
                       row_of_two_diseses_list("Bullous Disease", 3),
-                      /*
-                      Card(
-                        child: Container(
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                "Actinic Keratosis Basal Cell Carcinoma and other Malignant Lesionsa",
-                                style: GoogleFonts.ptSans(
-                                  fontSize: 19,
-                                  color: Color.fromRGBO(14, 49, 80, 1),
-                                ),
-                                textAlign: TextAlign.center,
-                              ),
-                            ),
-                          ),
-                          // height: 50.0,
-                          width: MediaQuery.of(context).size.width - 20,
-                          decoration: BoxDecoration(
-                            color: Color.fromRGBO(229, 33, 103, 1),
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                      ),
-                      Card(
-                        child: Container(
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                "Atopic Dermatitis",
-                                style: GoogleFonts.ptSans(
-                                  fontSize: 19,
-                                  color: Color.fromRGBO(14, 49, 80, 1),
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                          ),
-                          // height: 50.0,
-                          width: MediaQuery.of(context).size.width - 20,
-                          decoration: BoxDecoration(
-                              color: Color.fromRGBO(229, 33, 103, 1),
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(width: 0)),
-                        ),
-                      ),
-                      Card(
-                        child: Container(
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(5.0),
-                              child: Text(
-                                "Bullous Disease",
-                                style: GoogleFonts.ptSans(
-                                  fontSize: 19,
-                                  color: Color.fromRGBO(14, 49, 80, 1),
-                                ),
-                                textAlign: TextAlign.left,
-                              ),
-                            ),
-                          ),
-                          padding: EdgeInsets.all(0),
-                          // height: 50.0,
-                          width: MediaQuery.of(context).size.width - 20,
-                          decoration: BoxDecoration(
-                              color: Color.fromRGBO(229, 33, 103, 1),
-                              borderRadius: BorderRadius.circular(10),
-                              border: Border.all(width: 0)),
-                        ),
-                      ),*/
                       Container(
                         height: 35,
                         padding: EdgeInsets.all(0),
