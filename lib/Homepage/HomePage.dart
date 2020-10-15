@@ -304,7 +304,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               Text(
-                "Clear your doubts: ",
+                "Clear your doubts here..",
                 style: GoogleFonts.robotoSlab(
                     fontSize: 22,
                     color: Colors.black87,
