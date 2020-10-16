@@ -34,6 +34,7 @@ dependencies:
   splashscreen: ^1.2.0
   google_fonts: ^1.1.0
   flutter_local_notifications: ^2.0.1
+  firebase_auth: 0.14.0+5
 dev_dependencies:
   flutter_test:
     sdk: flutter
