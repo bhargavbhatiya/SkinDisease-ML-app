@@ -4,19 +4,15 @@ import 'package:skin_ML/Homepage/HomePage.dart';
 import 'package:skin_ML/services/disease_predict_model.dart';
 import 'package:skin_ML/services/chatbot.dart';
 import 'package:skin_ML/login.dart';
+import 'package:splashscreen/splashscreen.dart';
 
 void main() {
   runApp(
-    MaterialApp(
-      initialRoute: '/login',
+      MaterialApp(
+      initialRoute: '/home',
       debugShowCheckedModeBanner: false,
       routes: {
-        '/login': (context) => login(),
-        '/MyApp': (context) => MyApp(),
-        '/ML_Model': (context) => ML_Model(),
-        '/MyBot': (context) => MyBot(),
-        //'/dashboard': (context) => DashboardScreen(),
+        '/home': (context) => MyApp(),
       },
-    ),
-  );
+  ));
 }

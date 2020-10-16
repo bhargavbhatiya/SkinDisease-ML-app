@@ -17,7 +17,6 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SplashScreen(
-      loadingText: Text("Loading"),
       seconds: 5,
       backgroundColor: Color.fromRGBO(14, 49, 80, 1),
       image: Image.asset(
@@ -26,10 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       photoSize: 165,
       loaderColor: Colors.white,
-      navigateAfterSeconds: Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => login()),
-      )
+      navigateAfterSeconds: login(),
     );
   }
 }
