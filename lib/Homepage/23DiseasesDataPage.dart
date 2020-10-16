@@ -16,8 +16,8 @@ List<List<String>> dieses = [
     //"Actinic Keratosis Basal Cell Carcinoma and other Malignant Lesions"
     "https://www.researchgate.net/profile/Lyubomir_Dourmishev/publication/234081633/figure/fig1/AS:202527502016516@1425297727582/Nodular-basal-cell-carcinoma-at-the-left-zygomatic-area-in-an-86-years-old-woman.png",
     "A rough, scaly patch on the skin caused by years of sun exposure",
-    "Requires a medical diagnosis",
-    "Because it can become cancerous, it's usually removed as a precaution."
+    "Actinic keratoses can present as a solitary lesion or as a larger, diffuse plaque. Solitary lesions often appear as an ill-defined, scaly, rough, red plaque that is approximately 3 to 6 mm in diameter. The lesions can be slightly sensitive to touch.",
+    "Requires a medical diagnosis because it can become cancerous, it's usually removed as a precaution."
   ],
   [
     //"Atopic Dermatitis"
