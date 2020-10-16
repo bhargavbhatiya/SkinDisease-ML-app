@@ -10,6 +10,7 @@ import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:skin_ML/Homepage/DailyProblemsInfoPage.dart';
 import 'package:skin_ML/Homepage/DailyProblemsPage.dart';
+import 'package:skin_ML/login.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -25,15 +26,10 @@ class MyApp extends StatelessWidget {
       ),
       photoSize: 165,
       loaderColor: Colors.white,
-      navigateAfterSeconds: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Skincare',
-        theme: ThemeData(
-          primaryColor: Color.fromRGBO(14, 49, 80, 1),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-        home: MyHomePage(title: 'SkinShine'),
-      ),
+      navigateAfterSeconds: Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => login()),
+      )
     );
   }
 }
@@ -151,6 +147,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       drawer: MyDrawer(),
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(14, 49, 80, 1),
         centerTitle: true,
         // title: appLogo,
         title: Text(
