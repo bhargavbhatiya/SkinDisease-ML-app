@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:skin_ML/login.dart';
 
-// ignore: camel_case_types
 class signup extends StatefulWidget {
   @override
   _signupState createState() => _signupState();
@@ -10,8 +9,8 @@ class signup extends StatefulWidget {
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-// ignore: camel_case_types
 class _signupState extends State<signup> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController email = new TextEditingController();
   TextEditingController passwd = new TextEditingController();
   bool _success;
@@ -50,9 +49,9 @@ class _signupState extends State<signup> {
                     Image.asset("assets/SkinShine with text.png"),
                     Container(
                       child: const Text(
-                        'Sign up for new account',
+                        'Sign UP',
                         style: TextStyle(
-                          fontSize: 15,
+                          fontSize: 20,
                           color: Colors.white,
                         ),
                       ),
@@ -66,10 +65,13 @@ class _signupState extends State<signup> {
                       padding: const EdgeInsets.all(8.0),
                       child: TextFormField(
                         style: TextStyle(
-                          color: Colors.black,
+                          color: Colors.white,
                         ),
                         controller: email,
-                        decoration: const InputDecoration(labelText: 'Email'),
+                        decoration: const InputDecoration(
+                          labelText: 'Email',
+                          labelStyle: TextStyle(color: Colors.white),
+                        ),
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Email id can't be empty";
@@ -86,8 +88,10 @@ class _signupState extends State<signup> {
                         ),
                         obscureText: true,
                         controller: passwd,
-                        decoration:
-                            const InputDecoration(labelText: 'Password'),
+                        decoration: const InputDecoration(
+                          labelText: 'Password',
+                          labelStyle: TextStyle(color: Colors.white),
+                        ),
                         validator: (String value) {
                           if (value.isEmpty) {
                             return "Password can't be empty";

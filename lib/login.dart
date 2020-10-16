@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:skin_ML/Homepage/HomePage.dart';
 import 'package:skin_ML/signup.dart';
 
-// ignore: camel_case_types
 class login extends StatefulWidget {
   @override
   _loginState createState() => _loginState();
@@ -11,12 +10,10 @@ class login extends StatefulWidget {
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
-// ignore: camel_case_types
 class _loginState extends State<login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _success;
-  // ignore: unused_field
   String _userEmail;
 
   void _signInWithEmailAndPassword() async {
@@ -56,9 +53,9 @@ class _loginState extends State<login> {
                   Image.asset("assets/SkinShine with text.png"),
                   Container(
                     child: const Text(
-                      'Login to your SkinShine account',
+                      'LOGIN',
                       style: TextStyle(
-                        fontSize: 15,
+                        fontSize: 20,
                         color: Colors.white,
                       ),
                     ),
@@ -73,6 +70,7 @@ class _loginState extends State<login> {
                       decoration: const InputDecoration(
                         labelText: 'Email',
                         focusColor: Colors.white,
+                        labelStyle: TextStyle(color: Colors.white),
                       ),
                       validator: (String value) {
                         if (value.isEmpty) {
@@ -90,7 +88,10 @@ class _loginState extends State<login> {
                       ),
                       obscureText: true,
                       controller: _passwordController,
-                      decoration: const InputDecoration(labelText: 'Password'),
+                      decoration: const InputDecoration(
+                        labelText: 'Password',
+                        labelStyle: TextStyle(color: Colors.white),
+                      ),
                       validator: (String value) {
                         if (value.isEmpty) {
                           return "Password can't be empty";
