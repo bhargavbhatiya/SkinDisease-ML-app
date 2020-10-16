@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
+import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
 
 // ignore: camel_case_types
 class ML_Model extends StatefulWidget {
@@ -181,18 +182,93 @@ class _ML_ModelState extends State<ML_Model> {
                                             borderRadius:
                                                 BorderRadius.circular(12)),
                                         padding: EdgeInsets.all(7),
-                                        child: Center(
-                                          child: Text(
-                                            _outputs[0]["label"],
-                                            textAlign: TextAlign.center,
-                                            style: TextStyle(
-                                              color: Colors.black,
-                                              fontSize: 20,
+                                        child: Column(
+                                          children: [
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(12.0),
+                                              child: Text(
+                                                _outputs[0]["label"],
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 20,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
                                             ),
-                                          ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(12.0),
+                                              child: Text(
+                                                dieses[_outputs[0]["index"]][1],
+                                                textAlign: TextAlign.justify,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(12.0),
+                                              child: Text(
+                                                "Symptoms",
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(12.0),
+                                              child: Text(
+                                                dieses[_outputs[0]["index"]][2],
+                                                textAlign: TextAlign.justify,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(12.0),
+                                              child: Text(
+                                                "Treatment",
+                                                textAlign: TextAlign.center,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 18,
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding:
+                                                  const EdgeInsets.all(12.0),
+                                              child: Text(
+                                                dieses[_outputs[0]["index"]][3],
+                                                textAlign: TextAlign.justify,
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                  fontSize: 15,
+                                                ),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: EdgeInsets.all(7),
+                                            ),
+                                          ],
                                         ),
                                       )
-                                    : Container(child: Text(""))
+                                    : Container(child: Text("")),
+                            Padding(
+                              padding: EdgeInsets.all(10),
+                            ),
                           ],
                         ),
                       ),
