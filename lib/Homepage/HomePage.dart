@@ -453,6 +453,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
               SizedBox(height: 20),
+              /*
               Text(
                 "Stay Updated with latest news",
                 style: GoogleFonts.robotoSlab(
@@ -533,7 +534,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
-              ),
+              ),*/
               SizedBox(height: 30.0),
             ],
           ),
