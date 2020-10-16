@@ -11,6 +11,8 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:skin_ML/Homepage/DailyProblemsInfoPage.dart';
 import 'package:skin_ML/Homepage/DailyProblemsPage.dart';
 import 'package:skin_ML/login.dart';
+import 'package:skin_ML/services/chatbot.dart';
+import 'package:skin_ML/services/disease_predict_model.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -235,7 +237,27 @@ class _MyHomePageState extends State<MyHomePage> {
                           ]),
                     ]),
               ),
-              SizedBox(height: 10),
+              SizedBox(height: 25),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Container(
+                  height: 1.0,
+                  width: 300.0,
+                  color: Colors.black,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 1.0),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Container(
+                  height: 1.0,
+                  width: 300.0,
+                  color: Colors.black,
+                ),
+              ),
+              SizedBox(height: 20),
               Text(
                 "Solve your everyday problems: ",
                 style: GoogleFonts.robotoSlab(
@@ -287,6 +309,26 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               ),
+              SizedBox(height: 10),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Container(
+                  height: 1.0,
+                  width: 300.0,
+                  color: Colors.black,
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(vertical: 1.0),
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.0),
+                child: Container(
+                  height: 1.0,
+                  width: 300.0,
+                  color: Colors.black,
+                ),
+              ),
               // Text(
               //   "Facing an issue: \n Scan your image and get instant results"),
               Container(
@@ -310,68 +352,88 @@ class _MyHomePageState extends State<MyHomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Card(
-                      child: Container(
-                        height: 70.0,
-                        width: MediaQuery.of(context).size.width / 2.8,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.search,
-                              color: Colors.black,
+                      child: InkWell(
+                          child: Container(
+                            height: 70.0,
+                            width: MediaQuery.of(context).size.width / 2.8,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.search,
+                                  color: Colors.black,
+                                ),
+                                SizedBox(height: 3),
+                                Text(
+                                  "Scan Your Image",
+                                  style: GoogleFonts.robotoSlab(
+                                      // fontSize: 28,
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                                //   style: TextStyle(
+                                //       color: Colors.black,
+                                //       fontWeight: FontWeight.bold,),
+                                // ),
+                              ],
                             ),
-                            SizedBox(height: 3),
-                            Text(
-                              "Scan Your Image",
-                              style: GoogleFonts.robotoSlab(
-                                  // fontSize: 28,
-                                  color: Colors.black87,
-                                  fontWeight: FontWeight.bold),
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(85, 233, 199, 1),
+                              // color: Color.fromRGBO(9, 17, 55, 1),
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                            //   style: TextStyle(
-                            //       color: Colors.black,
-                            //       fontWeight: FontWeight.bold,),
-                            // ),
-                          ],
-                        ),
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(85, 233, 199, 1),
-                          // color: Color.fromRGBO(9, 17, 55, 1),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                                this.context,
+                                // ignore: missing_return
+                                MaterialPageRoute(
+                                  fullscreenDialog: true,
+                                  builder: (context) => ML_Model(),
+                                ));
+                          }),
                     ),
                     SizedBox(width: 5),
                     Card(
-                      child: Container(
-                        height: 70.0,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.person,
-                              color: Colors.black,
+                      child: InkWell(
+                          child: Container(
+                            height: 70.0,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(
+                                  Icons.chat,
+                                  color: Colors.black,
+                                ),
+                                SizedBox(height: 3),
+                                Text(
+                                  "Contact to us",
+                                  style: GoogleFonts.robotoSlab(
+                                      // fontSize: 28,
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.bold),
+                                  // style: TextStyle(
+                                  //   color: Colors.white,
+                                  // ),
+                                ),
+                              ],
                             ),
-                            SizedBox(height: 3),
-                            Text(
-                              "Contact to Us",
-                              style: GoogleFonts.robotoSlab(
-                                  // fontSize: 28,
-                                  color: Colors.black87,
-                                  fontWeight: FontWeight.bold),
-                              // style: TextStyle(
-                              //   color: Colors.white,
-                              // ),
+                            width: MediaQuery.of(context).size.width / 2.8,
+                            decoration: BoxDecoration(
+                              color: Color.fromRGBO(173, 182, 248, 1),
+                              // color: Color.fromRGBO(229, 33, 103, 1),
+                              borderRadius: BorderRadius.circular(10),
                             ),
-                          ],
-                        ),
-                        width: MediaQuery.of(context).size.width / 2.8,
-                        decoration: BoxDecoration(
-                          color: Color.fromRGBO(173, 182, 248, 1),
-                          // color: Color.fromRGBO(229, 33, 103, 1),
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                      ),
+                          ),
+                          onTap: () {
+                            Navigator.push(
+                                this.context,
+                                // ignore: missing_return
+                                MaterialPageRoute(
+                                  fullscreenDialog: true,
+                                  builder: (context) => MyBot(),
+                                ));
+                          }),
                     ),
                   ],
                 ),
