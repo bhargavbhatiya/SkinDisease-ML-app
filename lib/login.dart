@@ -44,6 +44,7 @@ class _loginState extends State<login> {
         body: Container(
           color: Color.fromRGBO(14, 49, 80, 1),
           child: SingleChildScrollView(
+            padding: const EdgeInsets.all(15),
             child: Center(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -61,20 +62,22 @@ class _loginState extends State<login> {
                       // child: Image.asset("assets/SkinShine with text.png"),
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Center(
                     child: Container(
                       child: Text(
                         'LOGIN',
                         style: GoogleFonts.robotoSlab(
-                          fontSize: 25,
+                          fontSize: 20,
                           color: Colors.white,
-                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       decoration: BoxDecoration(
                         border: Border.all(
-                          width: 2,
-                          color: Colors.blue,
+                          width: 1,
+                          color: Colors.white,
                         ),
                         borderRadius: BorderRadius.circular(5),
                       ),
@@ -82,6 +85,9 @@ class _loginState extends State<login> {
 
                       // alignment: Alignment.center,
                     ),
+                  ),
+                  SizedBox(
+                    height: 10,
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
@@ -132,7 +138,7 @@ class _loginState extends State<login> {
                       );
                     },
                     child: Text(
-                      "Don't have account? Sign up",
+                      "                        Don't have account? Sign up",
                       textAlign: TextAlign.center,
                       style: TextStyle(color: Colors.white),
                     ),

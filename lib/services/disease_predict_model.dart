@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:tflite/tflite.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
@@ -281,17 +282,42 @@ class _ML_ModelState extends State<ML_Model> {
         ),
       ),
       bottomNavigationBar: MyNavBar(),
-      floatingActionButton: FloatingActionButton(
-        tooltip: 'Pick Image',
-        onPressed: () {
-          pickImageGallery();
-        },
-        child: Icon(
-          Icons.add_a_photo,
-          size: 20,
-          color: Colors.white,
-        ),
-        backgroundColor: Color.fromRGBO(14, 49, 80, 1),
+      floatingActionButton: SpeedDial(
+        animatedIcon: AnimatedIcons.menu_close,
+        animatedIconTheme: IconThemeData(size: 22.0),
+        // child: Icon(Icons.add),
+        onOpen: () => print('OPENING DIAL'),
+        onClose: () => print('DIAL CLOSED'),
+        visible: true,
+        curve: Curves.bounceIn,
+        children: [
+          SpeedDialChild(
+            label: 'gallery',
+            labelStyle: TextStyle(fontWeight: FontWeight.w500),
+            onTap: () {
+              pickImageGallery();
+            },
+            child: Icon(
+              Icons.add_a_photo, //set gallery icon
+              size: 20,
+              color: Colors.white,
+            ),
+            backgroundColor: Color.fromRGBO(14, 49, 80, 1),
+          ),
+          SpeedDialChild(
+            label: 'camera',
+            labelStyle: TextStyle(fontWeight: FontWeight.w500),
+            onTap: () {
+              pickImageCamera();
+            },
+            child: Icon(
+              Icons.add_a_photo,
+              size: 20,
+              color: Colors.white,
+            ),
+            backgroundColor: Color.fromRGBO(14, 49, 80, 1),
+          ),
+        ],
       ),
     );
   }
