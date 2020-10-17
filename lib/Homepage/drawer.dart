@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
+import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
 import 'package:skin_ML/Homepage/reminder.dart';
 import 'package:skin_ML/services/ourteam.dart';
 import 'package:skin_ML/news/newspage.dart';
@@ -44,7 +44,7 @@ class _MyDrawerState extends State<MyDrawer> {
             },
           ),
           ListTile(
-            title: Text('Reminder'),
+            title: Text('Water Reminder'),
             onTap: () {
               Navigator.push(
                 context,
@@ -66,7 +66,7 @@ class _MyDrawerState extends State<MyDrawer> {
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => DiseasesInfoPage()),
+                MaterialPageRoute(builder: (context) => DiseasesList()),
               );
             },
           ),
