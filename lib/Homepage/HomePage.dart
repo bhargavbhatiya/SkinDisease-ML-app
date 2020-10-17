@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 import 'package:skin_ML/Homepage/drawer.dart';
 import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
+import 'package:skin_ML/Homepage/14DaysChallengeInfo.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -12,6 +13,7 @@ import 'package:skin_ML/Homepage/DailyProblemsInfoPage.dart';
 import 'package:skin_ML/Homepage/DailyProblemsPage.dart';
 import 'package:skin_ML/login.dart';
 import 'package:skin_ML/Homepage/reminder.dart';
+import 'package:skin_ML/Homepage/14DaysChallengeMainPage.dart';
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
@@ -529,12 +531,28 @@ class _MyHomePageState extends State<MyHomePage> {
                         ),
                         Container(
                           width: 30.0,
-                        )
+                        ),
                       ],
                     ),
                   ),
                 ),
               ),*/
+              SizedBox(height: 30.0),
+
+              Material(
+                child: GestureDetector(
+                  child: Image.asset(
+                    'assets/14days.jpg',
+                    fit: BoxFit.cover,
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => progress()),
+                    );
+                  },
+                ),
+              ),
               SizedBox(height: 30.0),
             ],
           ),
