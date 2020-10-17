@@ -28,7 +28,7 @@ class MyMap extends StatelessWidget {
                   textColor: Colors.white,
                   onPressed: () =>
                       MapsLauncher.launchQuery('Nearby skin doctor'),
-                  child: Text('LAUNCH QUERY'),
+                  child: Text('Skin Specialist near you'),
                 ),
               ), /*
               Container(
