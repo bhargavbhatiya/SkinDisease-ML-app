@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:skin_ML/login.dart';
 
+// ignore: camel_case_types
 class signup extends StatefulWidget {
   @override
   _signupState createState() => _signupState();
@@ -9,8 +10,8 @@ class signup extends StatefulWidget {
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
+// ignore: camel_case_types
 class _signupState extends State<signup> {
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController email = new TextEditingController();
   TextEditingController passwd = new TextEditingController();
   bool _success;

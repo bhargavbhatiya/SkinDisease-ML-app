@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:skin_ML/Homepage/HomePage.dart';
 import 'package:skin_ML/signup.dart';
 
+// ignore: camel_case_types
 class login extends StatefulWidget {
   @override
   _loginState createState() => _loginState();
@@ -10,11 +12,11 @@ class login extends StatefulWidget {
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
+// ignore: camel_case_types
 class _loginState extends State<login> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
   bool _success;
-  String _userEmail;
 
   void _signInWithEmailAndPassword() async {
     final FirebaseUser user = (await _auth.signInWithEmailAndPassword(
@@ -26,7 +28,6 @@ class _loginState extends State<login> {
     if (user != null) {
       setState(() {
         _success = true;
-        _userEmail = user.email;
       });
     } else {
       setState(() {
@@ -50,17 +51,37 @@ class _loginState extends State<login> {
                   SizedBox(
                     height: 50,
                   ),
-                  Image.asset("assets/SkinShine with text.png"),
-                  Container(
-                    child: const Text(
-                      'LOGIN',
-                      style: TextStyle(
-                        fontSize: 20,
-                        color: Colors.white,
+                  Center(
+                    child: Container(
+                      child: Image.asset(
+                        'assets/SkinShine with text.png',
+                        height: 200,
+                        width: 200,
                       ),
+                      // child: Image.asset("assets/SkinShine with text.png"),
                     ),
-                    padding: const EdgeInsets.all(16),
-                    alignment: Alignment.center,
+                  ),
+                  Center(
+                    child: Container(
+                      child: Text(
+                        'LOGIN',
+                        style: GoogleFonts.robotoSlab(
+                          fontSize: 25,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 2,
+                          color: Colors.blue,
+                        ),
+                        borderRadius: BorderRadius.circular(5),
+                      ),
+                      padding: const EdgeInsets.all(8),
+
+                      // alignment: Alignment.center,
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
