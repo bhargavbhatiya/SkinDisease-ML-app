@@ -6,6 +6,7 @@ import 'package:skin_ML/news/newspage.dart';
 import 'package:skin_ML/services/disease_predict_model.dart';
 import 'package:skin_ML/services/chatbot.dart';
 import 'package:skin_ML/login.dart';
+import 'package:skin_ML/Homepage/maplauncher.dart';
 
 class MyDrawer extends StatefulWidget {
   @override
@@ -49,6 +50,15 @@ class _MyDrawerState extends State<MyDrawer> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => MyReminder()),
+              );
+            },
+          ),
+          ListTile(
+            title: Text('Maps'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MyMap()),
               );
             },
           ),
