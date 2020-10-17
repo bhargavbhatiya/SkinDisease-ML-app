@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:skin_ML/Homepage/BottomNavigationBar.dart';
 import 'package:skin_ML/Homepage/drawer.dart';
 import 'package:skin_ML/Homepage/23DiseasesDataPage.dart';
-import 'package:skin_ML/Homepage/14DaysChallengeInfo.dart';
 import 'package:splashscreen/splashscreen.dart';
 import 'package:skin_ML/Homepage/DiseasesInfoPage.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -541,9 +540,26 @@ class _MyHomePageState extends State<MyHomePage> {
 
               Material(
                 child: GestureDetector(
-                  child: Image.asset(
-                    'assets/14days.jpg',
-                    fit: BoxFit.cover,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          "click to start 15 day skin challenges",
+                          style: GoogleFonts.robotoSlab(
+                              fontSize: 20.4,
+                              color: Color.fromRGBO(14, 49, 80, 1),
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 6,
+                      ),
+                      Image.asset(
+                        'assets/14days.jpg',
+                        fit: BoxFit.cover,
+                      ),
+                    ],
                   ),
                   onTap: () {
                     Navigator.push(

@@ -94,6 +94,7 @@ class Challenge extends StatefulWidget {
 }
 
 class _ChallengeState extends State<Challenge> {
+  // ignore: non_constant_identifier_names
   forteen_days_challenge(dynamic _index) {
     List list = [
       dailyremedy[_index - 1][0],

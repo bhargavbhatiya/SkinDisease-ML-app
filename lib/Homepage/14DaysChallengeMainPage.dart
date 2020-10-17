@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:skin_ML/Homepage/14DaysChallengeInfo.dart';
 
+// ignore: camel_case_types
 class progress extends StatefulWidget {
   @override
   _progressState createState() => _progressState();
 }
 
+// ignore: camel_case_types
 class _progressState extends State<progress> {
   @override
   Widget build(BuildContext context) {
