@@ -38,6 +38,7 @@ dependencies:
   firebase_core: ^0.4.5
   percent_indicator: "^2.1.7+2"
   maps_launcher: ^1.2.2+1
+  flutter_speed_dial: ^1.2.5
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
+import 'package:skin_ML/Homepage/reminderinput.dart';
 
 void main() => runApp(new MaterialApp(
       theme: ThemeData(
@@ -64,10 +65,18 @@ class _MyAppState extends State<MyReminder> {
               child: RaisedButton(
                 color: Color.fromRGBO(14, 49, 80, 1),
                 textColor: Colors.white,
-                onPressed: repeatedNotification,
                 child: new Text(
                   'Start Notification',
                 ),
+                onPressed: () {
+                  Navigator.push(
+                    this.context,
+                    // ignore: missing_return
+                    MaterialPageRoute(
+                      builder: (context) => SetTimePage(),
+                    ),
+                  );
+                },
               ),
             ),
             Container(
