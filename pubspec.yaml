@@ -37,6 +37,7 @@ dependencies:
   firebase_auth: 0.14.0+5
   firebase_core: ^0.4.5
   percent_indicator: "^2.1.7+2"
+  maps_launcher: ^1.2.2+1
 dev_dependencies:
   flutter_test:
     sdk: flutter
